@@ -1,3 +1,5 @@
 [user]
 	name = Jesse Dailey
 	email = jesse.dailey@gmail.com
+[core]
+	excludesfile = ~/.cvsignore
