@@ -104,18 +104,12 @@ au FileType html imap <style <style type="text/css"
 au FileType html imap <link <link rel="stylesheet" href="
 au FileType html inoremap <!-- <!-- --><Esc>hhhi
 
-" CF Mappings
-au FileType cf noremap ,c I<!--- <Esc>A ---><Esc>
-au FileType cf noremap ,u ^:s/<!--- *//<Cr>/---><Cr>:s/ *--->//<Cr>
-
-" ActionScript mappings
+" ActionScript mappings, outdated, mostly here as an example for the future
 au BufRead,BufNewFile *.as map ,h :!cmd /c start ' http://www.google.com/search?q=site:livedocs.adobe.com/flex/2/langref\%20\%20^R^W'<CR>
 au BufRead,BufNewFile *.mxml imap <mx:Script> <mx:Script><CR><![CDATA[<CR>]]><CR></mx:Script><Up><Up><Right><CR>
 
 " Python mappings
 au! FileType python runtime! autoload/pythoncomplete.vim
-au FileType python noremap ,c I# <Esc>
-au FileType python noremap ,u :s/$\(\s*\)#\s/\1/
 
 " Go mappings
 au BufRead,BufNewFile *.go set filetype=go
