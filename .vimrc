@@ -1,7 +1,8 @@
-
 " Appearance Settings
+call pathogen#infect()
 color darkblue
-hi Folded ctermfg=0 ctermbg=NONE
+color Tomorrow-Night " will fall back to darkblue if this isnt installed
+hi Folded ctermfg=0 ctermbg=NONE " force all color schemes to grey-out folded text
 " uncomment if you want Ctrl-V and Ctrl-C as your copy/paste keys
 " source $VIMRUNTIME/mswin.vim
 behave mswin
@@ -115,5 +116,3 @@ au! FileType python runtime! autoload/pythoncomplete.vim
 au BufRead,BufNewFile *.go set filetype=go
 au! Syntax go source $VIM/go.vim
 
-" Pathogen must be last
-call pathogen#infect()
