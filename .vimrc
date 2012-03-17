@@ -30,9 +30,7 @@ set foldmethod=indent
 set smartindent
 set noautoindent
 set nocindent
-set tabstop=2
-set softtabstop=2
-set shiftwidth=2
+set tabstop=2 softtabstop=2 shiftwidth=2 " indent using tabs, 1 tab = 2 visual spaces
 " set expandtab " uncomment to use spaces instead of tabs
 
 " General mappings
