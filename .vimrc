@@ -2,7 +2,8 @@
 " Appearance Settings
 color darkblue
 hi Folded ctermfg=0 ctermbg=NONE
-source $VIMRUNTIME/mswin.vim
+" uncomment if you want Ctrl-V and Ctrl-C as your copy/paste keys
+" source $VIMRUNTIME/mswin.vim
 behave mswin
 set guifont=Consolas:h10:cANSI
 syn on
