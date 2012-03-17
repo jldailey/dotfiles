@@ -44,9 +44,18 @@ map z< zc<<
 map zy zcYzo
 
 " bind some build hotkeys
-map <F5> :wa<Enter>:make debug<Enter>
-map <F6> :wa<Enter>:make<Enter>
-map <F7> :wa<Enter>:make run<Enter>
+map  <F5>    :wa<CR>:make debug<CR>
+map  [15~  :wa<CR>:make debug<CR>
+map  <F6>    :wa<CR>:make<CR>
+map  [17~  :wa<CR>:make<CR>
+map  <F7>    :wa<CR>:make run<CR>
+map  [18~  :wa<CR>:make run<CR>
+imap  <F5>   <Esc>:wa<CR>:make debug<CR>
+imap  [15~ <Esc>:wa<CR>:make debug<CR>
+imap  <F6>   <Esc>:wa<CR>:make<CR>
+imap  [17~ <Esc>:wa<CR>:make<CR>
+imap  <F7>   <Esc>:wa<CR>:make run<CR>
+imap  [18~ <Esc>:wa<CR>:make run<CR>
 
 " dont treat '#' special
 inoremap # x<Backspace>#
