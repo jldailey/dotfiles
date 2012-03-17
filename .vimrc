@@ -8,18 +8,19 @@ behave mswin
 set guifont=Consolas:h10:cANSI
 syn on
 
-
 " General Settings
 set exrc
 set nocompatible
 set backspace=2 " allow backspace over anything in insert mode
-set nobackup
-set viminfo='20,\"50
-set history=50
+set nobackup " dont create ~ backup files
+set noswapfile " dont create .swp files
+set viminfo='20,\"50 " what to save in ~/.viminfo
+set history=50 " how much to save
 set ruler
-set noswapfile
-set nowrap
+set nowrap " dont wrap long lines
+set number " show line numbers on the left                                                                                         
 set timeoutlen=500 " ms gap between mapping keys
+set visualbell " errors flash instead of beep
 
 " how to fold
 set foldenable
@@ -33,8 +34,6 @@ set tabstop=2
 set softtabstop=2
 set shiftwidth=2
 " set expandtab " uncomment to use spaces instead of tabs
-
-set number " show line numbers on the left                                                                                         
 
 " General mappings
 map ,l :set number!<Enter>
