@@ -1,9 +1,8 @@
-.bash_*
+.bash*
 .histfile
 .inputrc
 .minttyrc
 .profile
-.bashrc
 .ssh
 .viminfo
 .lesshst
