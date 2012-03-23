@@ -22,3 +22,6 @@ export GOROOT=/opt/go
 export PATH="$PATH:/opt/go/bin"
 export PATH="$PATH:$HOME/node/bin"
 
+if [ -z "$DISPLAY" ]; then
+	export DISPLAY=:0
+fi
