@@ -7,7 +7,7 @@ hi Folded ctermfg=gray ctermbg=NONE guifg=gray guibg=NONE " force all color sche
 " uncomment if you want Ctrl-V and Ctrl-C as your copy/paste keys
 " source $VIMRUNTIME/mswin.vim
 behave mswin
-set guifont=Consolas:h10:cANSI
+set guifont=Inconsolata:h14,Consolas:h10,Monaco:h12
 
 " General Settings
 set exrc
