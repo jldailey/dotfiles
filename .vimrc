@@ -2,7 +2,8 @@
 call pathogen#infect()
 syn on
 color darkblue
-color Tomorrow-Night " will fall back to darkblue if this isnt installed
+color Tomorrow-Night
+color wombat256
 hi Folded ctermfg=gray ctermbg=NONE guifg=gray guibg=NONE " force all color schemes to grey-out folded text
 " uncomment if you want Ctrl-V and Ctrl-C as your copy/paste keys
 " source $VIMRUNTIME/mswin.vim
@@ -22,6 +23,7 @@ set nowrap " dont wrap long lines
 set number " show line numbers on the left                                                                                         
 set timeoutlen=500 " ms gap between mapping keys
 set visualbell " errors flash instead of beep
+set autoread " dont warn about files that changed on disk, just read them
 
 " how to fold
 set foldenable
@@ -62,28 +64,36 @@ inoremap # x<Backspace>#
 
 " Move quickly between splits (in all different termainls, ugh)
 map  <C-Up>    <C-w><Up><C-w>_
+map  0a      <C-w><Up><C-w>_
 map  Oa      <C-w><Up><C-w>_
 map  [1;5A   <C-w><Up><C-w>_
 map  <C-Down>  <C-w><Down><C-w>_
+map  0b      <C-w><Down><C-w>_
 map  Ob      <C-w><Down><C-w>_
 map  [1;5B   <C-w><Down><C-w>_
 map  <C-Left>  <C-w><Left>
 map  0d      <C-w><Left>
+map  Od      <C-w><Left>
 map  [1;5D   <C-w><Left>
 map  <C-Right> <C-w><Right>
 map  0c      <C-w><Right>
+map  Oc      <C-w><Right>
 map  [1;5C   <C-w><Right>
 imap <C-Up>    <Esc><C-w><Up><C-w>_
+imap 0a      <Esc><C-w><Up><C-w>_
 imap Oa      <Esc><C-w><Up><C-w>_
 imap [1;5A   <Esc><C-w><Up><C-w>_
 imap <C-Down>  <Esc><C-w><Down><C-w>_
+imap 0b      <Esc><C-w><Down><C-w>_
 imap Ob      <Esc><C-w><Down><C-w>_
 imap [1;5B   <Esc><C-w><Down><C-w>_
 imap <C-Left>  <Esc><C-w><Left>
 imap 0d      <Esc><C-w><Left>
+imap Od      <Esc><C-w><Left>
 imap [1;5D   <Esc><C-w><Left>
 imap <C-Right> <Esc><C-w><Right>
 imap 0c      <Esc><C-w><Right>
+imap Oc      <C-w><Right>
 imap [1;5C   <Esc><C-w><Right>
 
 " Ctrl-D closes file - controversial
@@ -125,3 +135,18 @@ au! FileType python runtime! autoload/pythoncomplete.vim
 au BufRead,BufNewFile *.go set filetype=go
 au! Syntax go source $VIM/go.vim
 
+if executable('coffeetags')
+  let g:tagbar_type_coffee = {
+        \ 'ctagsbin' : 'coffeetags',
+        \ 'ctagsargs' : '',
+        \ 'kinds' : [
+        \ 'f:functions',
+        \ 'o:object',
+        \ ],
+        \ 'sro' : ".",
+        \ 'kind2scope' : {
+        \ 'f' : 'object',
+        \ 'o' : 'object',
+        \ }
+        \ }
+endif
