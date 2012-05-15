@@ -3,11 +3,12 @@ call pathogen#infect()
 syn on
 color darkblue
 color Tomorrow-Night " will fall back to darkblue if this isnt installed
+color wombat256
 hi Folded ctermfg=gray ctermbg=NONE guifg=gray guibg=NONE " force all color schemes to grey-out folded text
 " uncomment if you want Ctrl-V and Ctrl-C as your copy/paste keys
 " source $VIMRUNTIME/mswin.vim
 behave mswin
-set guifont=Inconsolata:h14,Consolas:h10,Monaco:h12
+set guifont=Consolas:h11,Monaco:h12
 
 " General Settings
 set exrc
