@@ -18,4 +18,4 @@
 	url = git://github.com/lukaszkorecki/CoffeeTags.git
 [submodule ".oh-my-zsh"]
 	path = .oh-my-zsh
-	url = https://github.com/robbyrussell/oh-my-zsh.git
+	url = git@github.com:jldailey/oh-my-zsh.git
