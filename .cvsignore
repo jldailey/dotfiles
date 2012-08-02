@@ -22,11 +22,11 @@
 .rnd
 .subversion
 .zcompdump
-Projects
-backups
-bin
-include
-lib
-share
-node
+/home/jldailey/Projects
+/home/jldailey/backups
+/home/jldailey/bin
+/home/jldailey/include
+/home/jldailey/lib
+/home/jldailey/share
+/home/jldailey/node
 
