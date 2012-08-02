@@ -7,12 +7,13 @@ color wombat256
 hi Folded ctermfg=gray ctermbg=NONE guifg=gray guibg=NONE " force all color schemes to grey-out folded text
 " uncomment if you want Ctrl-V and Ctrl-C as your copy/paste keys
 " source $VIMRUNTIME/mswin.vim
-behave mswin
+behave xterm
 set guifont=Inconsolata:h14,Consolas:h10,Monaco:h12
 
 " General Settings
 set exrc
 set nocompatible
+set laststatus=2
 set backspace=2 " allow backspace over anything in insert mode
 set nobackup " dont create ~ backup files
 set noswapfile " dont create .swp files
@@ -134,6 +135,12 @@ au! FileType python runtime! autoload/pythoncomplete.vim
 " Go mappings
 au BufRead,BufNewFile *.go set filetype=go
 au! Syntax go source $VIM/go.vim
+
+" CoffeeScript mappings
+
+" If you have something visually selected: ',p' will show you the
+" compiled version.
+vmap ,p y:!coffee -bce '<C-R>"'<CR>
 
 if executable('coffeetags')
   let g:tagbar_type_coffee = {
