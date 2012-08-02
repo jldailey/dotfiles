@@ -16,3 +16,6 @@
 [submodule ".vim/bundle/coffeetags"]
 	path = .vim/bundle/coffeetags
 	url = git://github.com/lukaszkorecki/CoffeeTags.git
+[submodule ".oh-my-zsh"]
+	path = .oh-my-zsh
+	url = git@github.com:jldailey/oh-my-zsh.git
