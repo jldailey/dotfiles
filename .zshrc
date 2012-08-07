@@ -43,10 +43,17 @@ fi
 # Node settings:
 export NODE_PATH="/usr/local/lib/node_modules"
 
+alias csc="coffee -r bling -bce"
+alias cs="coffee -r bling -e"
+alias fs="foreman start"
+alias v="vim"
+alias cd..="cd .."
+
 # Go settings:
 export GOOS=linux
 export GOARCH=386
 export GOROOT=/opt/go
+
 
 # X11 settings:
 if [ -z "$DISPLAY" ]; then
