@@ -41,7 +41,7 @@ if [ -e /Applications ]; then
 fi
 
 # Node settings:
-export NODE_PATH="/usr/local/lib/node_modules"
+export NODE_PATH=$HOME/lib/node_modules
 
 alias csc="coffee -r bling -bce"
 alias cs="coffee -r bling -e"
