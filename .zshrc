@@ -40,6 +40,9 @@ if [ -e /Applications ]; then
 	export PATH=$PATH:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin
 fi
 
+setopt nocorrect
+setopt nocorrectall
+
 # Node settings:
 export NODE_PATH=$HOME/lib/node_modules
 
