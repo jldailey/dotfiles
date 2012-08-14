@@ -34,19 +34,29 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=/Users/jldailey/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/usr/local/git/bin:/usr/local/sbin:/opt/go/bin:/Users/jldailey/vertx/bin
+export PATH=$HOME/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/usr/local/git/bin:/usr/local/sbin:/opt/go/bin
 
 if [ -e /Applications ]; then
 	export PATH=$PATH:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin
 fi
 
+setopt nocorrect
+setopt nocorrectall
+
 # Node settings:
-export NODE_PATH="/usr/local/lib/node_modules"
+export NODE_PATH=$HOME/lib/node_modules
+
+alias csc="coffee -r bling -bce"
+alias cs="coffee -r bling -e"
+alias fs="foreman start"
+alias v="vim"
+alias cd..="cd .."
 
 # Go settings:
 export GOOS=linux
 export GOARCH=386
 export GOROOT=/opt/go
+
 
 # X11 settings:
 if [ -z "$DISPLAY" ]; then

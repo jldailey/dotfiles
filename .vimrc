@@ -5,10 +5,16 @@ color darkblue
 color Tomorrow-Night " will fall back to darkblue if this isnt installed
 color wombat256
 hi Folded ctermfg=gray ctermbg=NONE guifg=gray guibg=NONE " force all color schemes to grey-out folded text
-" uncomment if you want Ctrl-V and Ctrl-C as your copy/paste keys
-" source $VIMRUNTIME/mswin.vim
 behave xterm
-set guifont=Consolas:h11,Monaco:h12
+if has("gui_gtk2")
+	set guifont=Inconsolata\ 12
+	hi Normal ctermbg=NONE
+elseif has("gui_macvim")
+	set guifont=Monaco:h12
+elseif has("gui_win32")
+	behave mswin
+	set guifont=Consolas:h11
+end
 
 " General Settings
 set exrc
@@ -63,7 +69,7 @@ imap  [18~ <Esc>:wa<CR>:make run<CR>
 " dont treat '#' special
 inoremap # x<Backspace>#
 
-" Move quickly between splits (in all different termainls, ugh)
+" Move quickly between splits (in all different terminals, ugh)
 map  <C-Up>    <C-w><Up><C-w>_
 map  0a      <C-w><Up><C-w>_
 map  Oa      <C-w><Up><C-w>_
