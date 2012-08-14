@@ -8,6 +8,7 @@ hi Folded ctermfg=gray ctermbg=NONE guifg=gray guibg=NONE " force all color sche
 behave xterm
 if has("gui_gtk2")
 	set guifont=Inconsolata\ 12
+	hi Normal ctermbg=NONE
 elseif has("gui_macvim")
 	set guifont=Monaco:h12
 elseif has("gui_win32")
