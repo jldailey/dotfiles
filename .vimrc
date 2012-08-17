@@ -9,6 +9,7 @@ hi Folded ctermfg=gray ctermbg=NONE guifg=gray guibg=NONE " force all color sche
 " source $VIMRUNTIME/mswin.vim
 behave xterm
 set guifont=Inconsolata:h14,Consolas:h10,Monaco:h12
+set guioptions=aegimrLt
 
 " General Settings
 set exrc
