@@ -38,6 +38,8 @@ export PATH=$HOME/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:
 
 if [ -e /Applications ]; then
 	export PATH=$PATH:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin
+elif [ -e /cygdrive ]; then
+	export PATH=$PATH:/cygdrive/c/Windows:/cygdrive/c/Windows/system32
 fi
 
 setopt nocorrect
