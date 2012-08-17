@@ -2,14 +2,20 @@
 call pathogen#infect()
 syn on
 color darkblue
-color Tomorrow-Night
+color Tomorrow-Night " will fall back to darkblue if this isnt installed
 color wombat256
 hi Folded ctermfg=gray ctermbg=NONE guifg=gray guibg=NONE " force all color schemes to grey-out folded text
-" uncomment if you want Ctrl-V and Ctrl-C as your copy/paste keys
-" source $VIMRUNTIME/mswin.vim
 behave xterm
-set guifont=Inconsolata:h14,Consolas:h10,Monaco:h12
 set guioptions=aegimrLt
+if has("gui_gtk2")
+	set guifont=Inconsolata\ 12
+	hi Normal ctermbg=NONE
+elseif has("gui_macvim")
+	set guifont=Monaco:h12
+elseif has("gui_win32")
+	behave mswin
+	set guifont=Consolas:h11
+end
 
 " General Settings
 set exrc
@@ -64,7 +70,7 @@ imap  [18~ <Esc>:wa<CR>:make run<CR>
 " dont treat '#' special
 inoremap # x<Backspace>#
 
-" Move quickly between splits (in all different termainls, ugh)
+" Move quickly between splits (in all different terminals, ugh)
 map  <C-Up>    <C-w><Up><C-w>_
 map  0a      <C-w><Up><C-w>_
 map  Oa      <C-w><Up><C-w>_
@@ -141,7 +147,7 @@ au! Syntax go source $VIM/go.vim
 
 " If you have something visually selected: ',p' will show you the
 " compiled version.
-vmap ,p y:!coffee -bce '<C-R>"'<CR>
+au FileType coffee vmap ,p y:!coffee -bce '<C-R>"'<CR>
 
 if executable('coffeetags')
   let g:tagbar_type_coffee = {
