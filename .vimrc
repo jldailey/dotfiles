@@ -146,7 +146,7 @@ au! Syntax go source $VIM/go.vim
 
 " If you have something visually selected: ',p' will show you the
 " compiled version.
-vmap ,p y:!coffee -bce '<C-R>"'<CR>
+au FileType coffee vmap ,p y:!coffee -bce '<C-R>"'<CR>
 
 if executable('coffeetags')
   let g:tagbar_type_coffee = {
