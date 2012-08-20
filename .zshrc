@@ -76,3 +76,5 @@ export GOROOT=/opt/go
 if [ -z "$DISPLAY" ]; then
 	export DISPLAY=:0
 fi
+
+export TERM=xterm-256color
