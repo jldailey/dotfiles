@@ -33,12 +33,26 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
-# Customize to your needs...
+# catch this common mistake
+alias cd..="cd .."
+
 export PATH=$HOME/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/usr/local/git/bin:/usr/local/sbin:/opt/go/bin
 
+# set up the right editor
+export EDITOR=vim
+if [ -x "`which mvim`" ]; then
+	export EDITOR=mvim
+elif [ -x "`which gvim`" ]; then
+	export EDITOR=gvim
+fi
+# always bind it to 'vi'
+alias vi="echo Loading in tab... && $EDITOR --remote-tab-silent"
+
 if [ -e /Applications ]; then
+	# put XCode on the PATH
 	export PATH=$PATH:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/bin
 elif [ -e /cygdrive ]; then
+	# put the Windows paths on PATH
 	export PATH=$PATH:/cygdrive/c/Windows:/cygdrive/c/Windows/system32
 fi
 
@@ -51,8 +65,6 @@ export NODE_PATH=$HOME/lib/node_modules
 alias csc="coffee -r bling -bce"
 alias cs="coffee -r bling -e"
 alias fs="foreman start"
-alias v="vim"
-alias cd..="cd .."
 
 # Go settings:
 export GOOS=linux
