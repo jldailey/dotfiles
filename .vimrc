@@ -4,7 +4,9 @@ syn on
 color darkblue
 color Tomorrow-Night " will fall back to darkblue if this isnt installed
 color wombat256
-hi Folded ctermfg=gray ctermbg=NONE guifg=gray guibg=NONE " force all color schemes to grey-out folded text
+hi Folded ctermfg=grey ctermbg=NONE guifg=gray guibg=NONE " force all color schemes to grey-out folded text
+hi NonText ctermbg=NONE guibg=NONE
+hi LineNr ctermbg=NONE guibg=NONE
 behave xterm
 set guioptions=aegimrLt
 if has("gui_gtk2")
