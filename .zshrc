@@ -43,7 +43,7 @@ export EDITOR=vim
 if [ -x "`which mvim`" ]; then
 	export EDITOR=mvim
 elif [ -x "`which gvim`" ]; then
-	export EDITOR=gvim
+	export EDITOR="gvim -g"
 fi
 # always bind it to 'vi'
 alias vi="echo Loading in tab... && $EDITOR --remote-tab-silent"
