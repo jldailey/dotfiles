@@ -40,13 +40,14 @@ export PATH=$HOME/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:
 
 # set up the right editor
 export EDITOR=vim
+export VIMGUI=vim
 if [ -x "`which mvim`" ]; then
-	export EDITOR=mvim
+	export VIMGUI="mvim --remote-tab-silent"
 elif [ -x "`which gvim`" ]; then
-	export EDITOR="gvim -g"
+	export VIMGUI="gvim -g --remote-tab-silent"
 fi
 # always bind it to 'vi'
-alias vi="echo Loading in tab... && $EDITOR --remote-tab-silent"
+alias vi="echo Loading in tab... && $VIMGUI"
 
 if [ -e /Applications ]; then
 	# put XCode on the PATH
