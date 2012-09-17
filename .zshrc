@@ -46,7 +46,8 @@ if [ -x "`which mvim`" ]; then
 elif [ -x "`which gvim`" ]; then
 	export VIMGUI="gvim -g --remote-tab-silent"
 fi
-alias gvi="$VIMGUI"
+# always bind it to 'vi'
+alias gvim="echo Loading in tab... && $VIMGUI"
 
 if [ -e /Applications ]; then
 	# put XCode on the PATH
