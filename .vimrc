@@ -9,15 +9,19 @@ hi NonText ctermbg=NONE guibg=NONE
 hi LineNr ctermbg=NONE guibg=NONE
 behave xterm
 set guioptions=aegimrLt
-if has("gui_gtk2")
-	set guifont=Inconsolata\ 12
+if has("gui_running")
+	if has("gui_gtk2")
+		set guifont=Inconsolata\ 12
+		hi Normal ctermbg=NONE
+	elseif has("gui_macvim")
+		set guifont=Monaco:h12
+	elseif has("gui_win32")
+		behave mswin
+		set guifont=Consolas:h11
+	end
+else
 	hi Normal ctermbg=NONE
-elseif has("gui_macvim")
-	set guifont=Monaco:h12
-elseif has("gui_win32")
-	behave mswin
-	set guifont=Consolas:h11
-end
+endif
 
 " General Settings
 set exrc
