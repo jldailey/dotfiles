@@ -41,9 +41,9 @@ export PATH=$HOME/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:
 # set up the right editor
 export EDITOR=vim
 export VIMGUI=vim
-if [ -x "`which mvim`" ]; then
+if [ -x "`which mvim 2> /dev/null`" ]; then
 	export VIMGUI="mvim --remote-tab-silent"
-elif [ -x "`which gvim`" ]; then
+elif [ -x "`which gvim 2> /dev/null`" ]; then
 	export VIMGUI="gvim -g --remote-tab-silent"
 fi
 # always bind it to 'vi'
