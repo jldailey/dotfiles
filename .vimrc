@@ -147,7 +147,6 @@ au! FileType python runtime! autoload/pythoncomplete.vim
 
 " Go mappings
 au BufRead,BufNewFile *.go set filetype=go
-au! Syntax go source $VIM/go.vim
 
 " JSON mappins
 au BufRead,BufNewFile *.json set filetype=javascript
