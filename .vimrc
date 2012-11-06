@@ -52,6 +52,10 @@ set tabstop=2 softtabstop=2 shiftwidth=2 " indent using tabs, 1 tab = 2 visual s
 
 " General mappings
 map ,l :set number!<Enter>
+" Knock out these (out-dated) default mappings
+nnoremap <F1> <nop>
+nnoremap Q <nop>
+nnoremap K <nop>
 
 " Mappings that work on whole indented blocks
 map zd zcdd
