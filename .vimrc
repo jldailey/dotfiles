@@ -23,6 +23,7 @@ else
 	hi Normal ctermbg=NONE
 endif
 
+
 " General Settings
 set exrc
 set nocompatible
@@ -38,6 +39,7 @@ set number " show line numbers on the left
 set timeoutlen=500 " ms gap between mapping keys
 set visualbell " errors flash instead of beep
 set autoread " dont warn about files that changed on disk, just read them
+filetype plugin on " load ftplugins
 
 " how to fold
 set foldenable
