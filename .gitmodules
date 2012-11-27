@@ -21,4 +21,4 @@
 	url = git@github.com:jldailey/oh-my-zsh.git
 [submodule ".vim/bundle/vimwiki"]
 	path = .vim/bundle/vimwiki
-	url = git://github.com/vim-scripts/vimwiki.git
+	url = git://github.com/jldailey/vimwiki.git
