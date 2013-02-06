@@ -2,10 +2,10 @@
 call pathogen#infect()
 syn on
 color darkblue
-color Tomorrow-Night " will fall back to darkblue if this isnt installed
+color wombat256
 behave xterm
-set guioptions=aegimrLt
 if has("gui_running")
+	set guioptions=aegimrLt
 	if has("gui_gtk2")
 		set guifont=Inconsolata\ 12
 		hi Normal ctermbg=NONE
@@ -16,14 +16,13 @@ if has("gui_running")
 		set guifont=Consolas:h11
 	end
 else
-	color wombat256
 	hi Normal ctermbg=NONE
 endif
 
 " override certain colors in every scheme
 "
 " make Folded text gray with no background
-hi Folded ctermfg=grey ctermbg=NONE guifg=gray guibg=NONE " force all color schemes to grey-out folded text
+hi Folded ctermfg=grey ctermbg=NONE guifg=gray guibg=NONE
 " clear backgrounds where they aren't needed
 hi NonText ctermbg=NONE guibg=NONE
 hi LineNr ctermbg=NONE guibg=NONE
