@@ -36,7 +36,12 @@ source $ZSH/oh-my-zsh.sh
 # catch this common mistake
 alias cd..="cd .."
 
-export PATH=$HOME/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/usr/local/git/bin:/usr/local/sbin:/opt/go/bin
+export PATH=$HOME/bin:$HOME/sbin
+export PATH=$PATH:/usr/local/bin:/usr/local/sbin
+export PATH=$PATH:/usr/bin:/usr/sbin
+export PATH=$PATH:/bin:/sbin
+export PATH=$PATH:/usr/X11/bin
+export PATH=$PATH:/usr/local/git/bin:/opt/go/bin
 
 # set up the right editor
 export EDITOR=vim
