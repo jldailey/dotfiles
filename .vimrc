@@ -191,3 +191,5 @@ if executable('coffeetags')
         \ }
         \ }
 endif
+
+let g:gitgutter_enabled = 1
