@@ -192,4 +192,30 @@ if executable('coffeetags')
         \ }
 endif
 
+" Configure the Git Gutter plugin
 let g:gitgutter_enabled = 1
+hi SignColumn ctermbg=NONE guibg=NONE
+hi lineAdded ctermfg=green guifg=green
+hi lineRemoved ctermfg=red guifg=red
+hi lineModified ctermfg=yellow guifg=yellow
+
+" Force files into utf-8 mode
+scriptencoding utf-8
+set encoding=utf-8
+
+" Show whitespace characters as special symbols
+set listchars=tab:·⋅,precedes:⋯,extends:⋯,trail:⋅
+set list
+
+" <C-k> or <S-k> launches a manual for the current keyword in Chrome
+let g:manprog='google-chrome --no-first-run --user-data-dir=/tmp "http://www.google.com/search?ie=UTF-8&oe=UTF-8&sourceid=navclient&btnI=1&q='
+function! g:BrowseManual(text)
+	redir => ft
+	set ft?
+	redir END
+	let ft=split(matchlist(ft, 'filetype=\(.*\)')[1], '\n')[0]
+	execute 'silent! !' . g:manprog . join(split(ft.' manual '.a:text, ' '), '\%20') . '" &> /dev/null'
+endfunction
+noremap <C-k> <Esc>:call g:BrowseManual("<C-r><C-w>")<CR>
+map <S-k> <C-k>
+
