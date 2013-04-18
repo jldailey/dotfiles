@@ -2,22 +2,33 @@
 call pathogen#infect()
 syn on
 color darkblue
-color Tomorrow-Night " will fall back to darkblue if this isnt installed
 color wombat256
-hi Folded ctermfg=grey ctermbg=NONE guifg=gray guibg=NONE " force all color schemes to grey-out folded text
+behave xterm
+if has("gui_running")
+	set guioptions=aegimrLt
+	if has("gui_gtk2")
+		set guifont=Inconsolata\ 12
+		hi Normal ctermbg=NONE
+	elseif has("gui_macvim")
+		set guifont=Monaco:h12
+	elseif has("gui_win32")
+		behave mswin
+		set guifont=Consolas:h11
+	end
+else
+	hi Normal ctermbg=NONE
+endif
+
+" override certain colors in every scheme
+"
+" make Folded text gray with no background
+hi Folded ctermfg=grey ctermbg=NONE guifg=gray guibg=NONE
+" clear backgrounds where they aren't needed
 hi NonText ctermbg=NONE guibg=NONE
 hi LineNr ctermbg=NONE guibg=NONE
-behave xterm
-set guioptions=aegimrLt
-if has("gui_gtk2")
-	set guifont=Inconsolata\ 12
-	hi Normal ctermbg=NONE
-elseif has("gui_macvim")
-	set guifont=Monaco:h12
-elseif has("gui_win32")
-	behave mswin
-	set guifont=Consolas:h11
-end
+" force the paren-matching colors to be simple so they dont get confused with the cursor
+hi MatchParen ctermbg=black guibg=black ctermfg=white guifg=white
+
 
 " General Settings
 set exrc
@@ -31,29 +42,41 @@ set history=50 " how much to save
 set ruler
 set nowrap " dont wrap long lines
 set number " show line numbers on the left                                                                                         
-set timeoutlen=500 " ms gap between mapping keys
+set timeoutlen=300 " ms gap between mapping keys
 set visualbell " errors flash instead of beep
 set autoread " dont warn about files that changed on disk, just read them
+filetype plugin on " load ftplugins
 
 " how to fold
 set foldenable
 set foldmethod=indent
 
 " how to indent
-set smartindent
-set noautoindent
-set nocindent
-set tabstop=2 softtabstop=2 shiftwidth=2 " indent using tabs, 1 tab = 2 visual spaces
-" set expandtab " uncomment to use spaces instead of tabs
+" indent using tabs, one <Tab> key inserts one tab character.
+" tab characters appear as 2 visual spaces
+set tabstop=2 softtabstop=2 shiftwidth=2
+set smartindent " I forget
+set noautoindent " what all
+set nocindent " these do.
+
+" uncomment this to silently replace tabs with spaces
+" set expandtab 
 
 " General mappings
+"
+" Toggle line numbers
 map ,l :set number!<Enter>
 
+" Knock out these (out-dated) default mappings
+nnoremap <F1> <nop>
+nnoremap Q <nop>
+nnoremap K <nop> " causes a `man` lookup, almost never useful today
+
 " Mappings that work on whole indented blocks
-map zd zcdd
-map z> zc>>
-map z< zc<<
-map zy zcYzo
+" map zd zcdd " fold + delete
+" map z> zc>> " fold + indent
+" map z< zc<< " fold + unindent
+" map zy zcY " fold + yank
 
 " bind some build hotkeys
 map  <F5>    :wa<CR>:make debug<CR>
@@ -69,7 +92,7 @@ imap  [17~ <Esc>:wa<CR>:make<CR>
 imap  <F7>   <Esc>:wa<CR>:make run<CR>
 imap  [18~ <Esc>:wa<CR>:make run<CR>
 
-" dont treat '#' special
+" dont treat '#' as special
 inoremap # x<Backspace>#
 
 " Move quickly between splits (in all different terminals, ugh)
@@ -135,7 +158,7 @@ au FileType html imap <link <link rel="stylesheet" href="
 au FileType html inoremap <!-- <!-- --><Esc>hhhi
 
 " ActionScript mappings, outdated, mostly here as an example for the future
-au BufRead,BufNewFile *.as map ,h :!cmd /c start ' http://www.google.com/search?q=site:livedocs.adobe.com/flex/2/langref\%20\%20^R^W'<CR>
+" au BufRead,BufNewFile *.as map ,h :!cmd /c start ' http://www.google.com/search?q=site:livedocs.adobe.com/flex/2/langref\%20\%20^R^W'<CR>
 au BufRead,BufNewFile *.mxml imap <mx:Script> <mx:Script><CR><![CDATA[<CR>]]><CR></mx:Script><Up><Up><Right><CR>
 
 " Python mappings
@@ -143,7 +166,9 @@ au! FileType python runtime! autoload/pythoncomplete.vim
 
 " Go mappings
 au BufRead,BufNewFile *.go set filetype=go
-au! Syntax go source $VIM/go.vim
+
+" JSON mappins
+au BufRead,BufNewFile *.json set filetype=javascript
 
 " CoffeeScript mappings
 
@@ -166,3 +191,31 @@ if executable('coffeetags')
         \ }
         \ }
 endif
+
+" Configure the Git Gutter plugin
+let g:gitgutter_enabled = 1
+hi SignColumn ctermbg=NONE guibg=NONE
+hi lineAdded ctermfg=green guifg=green
+hi lineRemoved ctermfg=red guifg=red
+hi lineModified ctermfg=yellow guifg=yellow
+
+" Force files into utf-8 mode
+scriptencoding utf-8
+set encoding=utf-8
+
+" Show whitespace characters as special symbols
+set listchars=tab:·⋅,precedes:⋯,extends:⋯,trail:⋅
+set list
+
+" <C-k> or <S-k> launches a manual for the current keyword in Chrome
+let g:manprog='google-chrome --no-first-run --user-data-dir=/tmp "http://www.google.com/search?ie=UTF-8&oe=UTF-8&sourceid=navclient&btnI=1&q='
+function! g:BrowseManual(text)
+	redir => ft
+	set ft?
+	redir END
+	let ft=split(matchlist(ft, 'filetype=\(.*\)')[1], '\n')[0]
+	execute 'silent! !' . g:manprog . join(split(ft.' manual '.a:text, ' '), '\%20') . '" &> /dev/null'
+endfunction
+noremap <C-k> <Esc>:call g:BrowseManual("<C-r><C-w>")<CR>
+map <S-k> <C-k>
+

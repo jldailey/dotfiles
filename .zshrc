@@ -36,18 +36,23 @@ source $ZSH/oh-my-zsh.sh
 # catch this common mistake
 alias cd..="cd .."
 
-export PATH=$HOME/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/usr/local/git/bin:/usr/local/sbin:/opt/go/bin
+export PATH=$HOME/bin:$HOME/sbin
+export PATH=$PATH:/usr/local/bin:/usr/local/sbin
+export PATH=$PATH:/usr/bin:/usr/sbin
+export PATH=$PATH:/bin:/sbin
+export PATH=$PATH:/usr/X11/bin
+export PATH=$PATH:/usr/local/git/bin:/opt/go/bin
 
 # set up the right editor
 export EDITOR=vim
 export VIMGUI=vim
-if [ -x "`which mvim`" ]; then
+if [ -x "`which mvim 2> /dev/null`" ]; then
 	export VIMGUI="mvim --remote-tab-silent"
-elif [ -x "`which gvim`" ]; then
+elif [ -x "`which gvim 2> /dev/null`" ]; then
 	export VIMGUI="gvim -g --remote-tab-silent"
 fi
 # always bind it to 'vi'
-alias vi="echo Loading in tab... && $VIMGUI"
+alias gvim="echo Loading in tab... && $VIMGUI"
 
 if [ -e /Applications ]; then
 	# put XCode on the PATH
