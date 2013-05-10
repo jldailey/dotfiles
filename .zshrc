@@ -42,6 +42,7 @@ export PATH=$PATH:/usr/bin:/usr/sbin
 export PATH=$PATH:/bin:/sbin
 export PATH=$PATH:/usr/X11/bin
 export PATH=$PATH:/usr/local/git/bin:/opt/go/bin
+export PATH=./node_modules/.bin:$PATH
 
 # set up the right editor
 export EDITOR=vim
@@ -60,6 +61,7 @@ if [ -e /Applications ]; then
 elif [ -e /cygdrive ]; then
 	# put the Windows paths on PATH
 	export PATH=$PATH:/cygdrive/c/Windows:/cygdrive/c/Windows/system32
+	export PATH="$PATH:/cygdrive/c/Program Files (x86)/nodejs"
 fi
 
 setopt nocorrect

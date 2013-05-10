@@ -206,6 +206,9 @@ set encoding=utf-8
 " Show whitespace characters as special symbols
 set listchars=tab:·⋅,precedes:⋯,extends:⋯,trail:⋅
 set list
+if has("win32")
+	set nolist
+endif
 
 " <C-k> or <S-k> launches a manual for the current keyword in Chrome
 let g:manprog='google-chrome --no-first-run --user-data-dir=/tmp "http://www.google.com/search?ie=UTF-8&oe=UTF-8&sourceid=navclient&btnI=1&q='
