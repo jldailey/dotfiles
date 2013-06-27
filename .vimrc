@@ -1,3 +1,10 @@
+let os=substitute(system('uname -o'), '\n', '', '')
+if os == 'Cygwin'
+	let g:browserprog="c:/Users/jldailey/AppData/Local/Google/Chrome/Application/chrome.exe --no-first-run --user-data-dir=C:/Temp "
+else
+	let g:browserprog='google-chrome --no-first-run --user-data-dir=/tmp '
+endif
+
 " Appearance Settings
 call pathogen#infect()
 syn on
@@ -60,12 +67,12 @@ set noautoindent " what all
 set nocindent " these do.
 
 " uncomment this to silently replace tabs with spaces
-" set expandtab 
+" set expandtab
 
 " General mappings
 "
 " Toggle line numbers
-map ,l :set number!<Enter>
+map ,l :set number!<Enter>:set list!<Enter>
 
 " Knock out these (out-dated) default mappings
 nnoremap <F1> <nop>
@@ -157,10 +164,6 @@ au FileType html imap <style <style type="text/css"
 au FileType html imap <link <link rel="stylesheet" href="
 au FileType html inoremap <!-- <!-- --><Esc>hhhi
 
-" ActionScript mappings, outdated, mostly here as an example for the future
-" au BufRead,BufNewFile *.as map ,h :!cmd /c start ' http://www.google.com/search?q=site:livedocs.adobe.com/flex/2/langref\%20\%20^R^W'<CR>
-au BufRead,BufNewFile *.mxml imap <mx:Script> <mx:Script><CR><![CDATA[<CR>]]><CR></mx:Script><Up><Up><Right><CR>
-
 " Python mappings
 au! FileType python runtime! autoload/pythoncomplete.vim
 
@@ -204,21 +207,21 @@ scriptencoding utf-8
 set encoding=utf-8
 
 " Show whitespace characters as special symbols
-set listchars=tab:·⋅,precedes:⋯,extends:⋯,trail:⋅
+set listchars=tab:•⋅,precedes:⋯,extends:⋯,trail:⋅
 set list
-if has("win32")
-	set nolist
-endif
 
 " <C-k> or <S-k> launches a manual for the current keyword in Chrome
-let g:manprog='google-chrome --no-first-run --user-data-dir=/tmp "http://www.google.com/search?ie=UTF-8&oe=UTF-8&sourceid=navclient&btnI=1&q='
 function! g:BrowseManual(text)
 	redir => ft
 	set ft?
 	redir END
 	let ft=split(matchlist(ft, 'filetype=\(.*\)')[1], '\n')[0]
-	execute 'silent! !' . g:manprog . join(split(ft.' manual '.a:text, ' '), '\%20') . '" &> /dev/null'
+	if ft == 'coffee'
+		let ft = 'coffeescript'
+	endif
+	execute 'silent! !' . g:browserprog . ' "https://duckduckgo.com/?q=\\%20' .  join(split(ft.' '.a:text, ' '), '\%20') . '" &> /dev/null &'
 endfunction
-noremap <C-k> <Esc>:call g:BrowseManual("<C-r><C-w>")<CR>
+noremap <C-k> <Esc>:call g:BrowseManual("<C-r><C-w>")<CR><C-l>
 map <S-k> <C-k>
+
 
