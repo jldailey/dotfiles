@@ -33,6 +33,7 @@ hi Folded ctermfg=grey ctermbg=NONE guifg=gray guibg=NONE
 " clear backgrounds where they aren't needed
 hi NonText ctermbg=NONE guibg=NONE
 hi LineNr ctermbg=NONE guibg=NONE
+hi SpecialKey ctermbg=NONE guibg=NONE
 " force the paren-matching colors to be simple so they dont get confused with the cursor
 hi MatchParen ctermbg=black guibg=black ctermfg=white guifg=white
 
@@ -72,7 +73,7 @@ set nocindent " these do.
 " General mappings
 "
 " Toggle line numbers
-map ,l :set number!<Enter>:set list!<Enter>
+map ,l :set number!<Enter>
 
 " Knock out these (out-dated) default mappings
 nnoremap <F1> <nop>
@@ -207,8 +208,9 @@ scriptencoding utf-8
 set encoding=utf-8
 
 " Show whitespace characters as special symbols
-set listchars=tab:•⋅,precedes:⋯,extends:⋯,trail:⋅
-set list
+set listchars=tab:›\ ,precedes:⋯,extends:⋯,trail:⋅
+set nolist
+map ,L :set list!<CR>
 
 " <C-k> or <S-k> launches a manual for the current keyword in Chrome
 function! g:BrowseManual(text)
