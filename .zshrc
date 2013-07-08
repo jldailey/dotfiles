@@ -76,10 +76,17 @@ alias cs="coffee -r bling -e"
 alias fs="foreman start"
 
 # Go settings:
+export GOROOT=/opt/go
+export GOPATH=/home/jldailey/Projects/go
 export GOOS=linux
 export GOARCH=386
-export GOROOT=/opt/go
-
+if [ -e /Applications ]; then
+	export GOOS=darwin
+	export GOARCH=amd64
+	export GOPATH=/Users/jldailey/Projects/go
+elif [ -e /cygdrive ]; then
+	export GOOS=windows
+fi
 
 # X11 settings:
 if [ -z "$DISPLAY" ]; then
