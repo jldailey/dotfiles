@@ -3,3 +3,5 @@
 	email = jesse.dailey@gmail.com
 [core]
 	excludesFile = ~/.cvsignore
+[push]
+	default = simple
