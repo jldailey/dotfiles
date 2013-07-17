@@ -46,7 +46,7 @@ export PATH=$PATH:/usr/local/share/npm/bin
 export PATH=./node_modules/.bin:$PATH
 
 # set up the right editor
-export EDITOR=vim
+export EDITOR=vi
 export VIMGUI=vim
 if [ -x "`which mvim 2> /dev/null`" ]; then
 	export VIMGUI="mvim --remote-tab-silent"
