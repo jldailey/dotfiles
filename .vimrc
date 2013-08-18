@@ -33,6 +33,7 @@ hi Folded ctermfg=grey ctermbg=NONE guifg=gray guibg=NONE
 " clear backgrounds where they aren't needed
 hi NonText ctermbg=NONE guibg=NONE
 hi LineNr ctermbg=NONE guibg=NONE
+hi SpecialKey ctermbg=NONE guibg=NONE
 " force the paren-matching colors to be simple so they dont get confused with the cursor
 hi MatchParen ctermbg=black guibg=black ctermfg=white guifg=white
 
@@ -80,6 +81,7 @@ nnoremap Q <nop>
 nnoremap K <nop> " causes a `man` lookup, almost never useful today
 
 " Mappings that work on whole indented blocks
+" Disabled because they slow down other z-operations
 " map zd zcdd " fold + delete
 " map z> zc>> " fold + indent
 " map z< zc<< " fold + unindent
@@ -207,7 +209,7 @@ scriptencoding utf-8
 set encoding=utf-8
 
 " Show whitespace characters as special symbols
-set listchars=tab:•⋅,precedes:⋯,extends:⋯,trail:⋅
+set listchars=tab:•·,precedes:‹,extends:›,trail:…
 set list
 
 " <C-k> or <S-k> launches a manual for the current keyword in Chrome
