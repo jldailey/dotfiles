@@ -73,7 +73,7 @@ set nocindent " these do.
 " General mappings
 "
 " Toggle line numbers
-map ,l :set number!<Enter>:set list!<Enter>
+map ,l :set number!<Enter>
 
 " Knock out these (out-dated) default mappings
 nnoremap <F1> <nop>
@@ -209,8 +209,9 @@ scriptencoding utf-8
 set encoding=utf-8
 
 " Show whitespace characters as special symbols
-set listchars=tab:•·,precedes:‹,extends:›,trail:…
-set list
+set listchars=tab:›\ ,precedes:‹,extends:›,trail:…
+set nolist
+map ,L :set list!<CR>
 
 " <C-k> or <S-k> launches a manual for the current keyword in Chrome
 function! g:BrowseManual(text)
