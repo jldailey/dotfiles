@@ -227,4 +227,3 @@ endfunction
 noremap <C-k> <Esc>:call g:BrowseManual("<C-r><C-w>")<CR><C-l>
 map <S-k> <C-k>
 
-
