@@ -67,6 +67,7 @@ elif [ -e /cygdrive ]; then
 	# put the Windows paths on PATH
 	export PATH=$PATH:/cygdrive/c/Windows:/cygdrive/c/Windows/system32
 	export PATH="$PATH:/cygdrive/c/Program Files (x86)/nodejs"
+	alias vi=vim
 fi
 
 setopt nocorrect
