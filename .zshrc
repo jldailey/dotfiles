@@ -1,3 +1,7 @@
+export TERM=xterm-256color
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
@@ -36,10 +40,17 @@ source $ZSH/oh-my-zsh.sh
 # catch this common mistake
 alias cd..="cd .."
 
-export PATH=$HOME/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/usr/local/git/bin:/usr/local/sbin:/opt/go/bin
+export PATH=$HOME/bin:$HOME/sbin
+export PATH=$PATH:/usr/local/bin:/usr/local/sbin
+export PATH=$PATH:/usr/bin:/usr/sbin
+export PATH=$PATH:/bin:/sbin
+export PATH=$PATH:/usr/X11/bin
+export PATH=$PATH:/usr/local/git/bin:/opt/go/bin
+export PATH=$PATH:/usr/local/share/npm/bin
+export PATH=./node_modules/.bin:$PATH
 
 # set up the right editor
-export EDITOR=vim
+export EDITOR=vi
 export VIMGUI=vim
 if [ -x "`which mvim 2> /dev/null`" ]; then
 	export VIMGUI="mvim --remote-tab-silent"
@@ -55,6 +66,7 @@ if [ -e /Applications ]; then
 elif [ -e /cygdrive ]; then
 	# put the Windows paths on PATH
 	export PATH=$PATH:/cygdrive/c/Windows:/cygdrive/c/Windows/system32
+	export PATH="$PATH:/cygdrive/c/Program Files (x86)/nodejs"
 fi
 
 setopt nocorrect
@@ -68,17 +80,46 @@ alias cs="coffee -r bling -e"
 alias fs="foreman start"
 
 # Go settings:
+export GOROOT=/opt/go
+export GOPATH=/home/jldailey/Projects/go
 export GOOS=linux
 export GOARCH=386
-export GOROOT=/opt/go
-
+if [ -e /Applications ]; then
+	export GOOS=darwin
+	export GOARCH=amd64
+	export GOPATH=/Users/jldailey/Projects/go
+elif [ -e /cygdrive ]; then
+	export GOOS=windows
+fi
 
 # X11 settings:
 if [ -z "$DISPLAY" ]; then
 	export DISPLAY=:0
 fi
 
-export TERM=xterm-256color
-export LANG=en_US.UTF-8
-export LC_ALL=en_US.UTF-8
 alias mosh="mosh --server='mosh-server new -l LANG=en_US.UTF-8'"
+
+export MARKPATH=$HOME/.marks
+function recall {
+	cd -P $MARKPATH/$1 2>/dev/null || echo "No such mark: $1"
+}
+function mark {
+	mkdir -p $MARKPATH; ln -s $(pwd) $MARKPATH/$1
+}
+function unmark {
+	rm -i $MARKPATH/$1
+}
+function marks {
+	ls -l $MARKPATH | sed 's/  / /g' | cut -d' ' -f9- | sed 's/ -/\t-/g' && echo
+}
+
+function pull-bundles {
+	(cd ~/.vim/bundle &&
+		for i in `ls`
+			do
+				echo Pulling Bundle: $i
+				(cd $i && gco master && git pull) || exit
+			done
+	)
+}
+
