@@ -1,3 +1,7 @@
+export TERM=xterm-256color
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
@@ -63,6 +67,7 @@ elif [ -e /cygdrive ]; then
 	# put the Windows paths on PATH
 	export PATH=$PATH:/cygdrive/c/Windows:/cygdrive/c/Windows/system32
 	export PATH="$PATH:/cygdrive/c/Program Files (x86)/nodejs"
+	alias vi=vim
 fi
 
 setopt nocorrect
@@ -93,7 +98,7 @@ if [ -z "$DISPLAY" ]; then
 	export DISPLAY=:0
 fi
 
-export TERM=xterm-256color
+alias mosh="mosh --server='mosh-server new -l LANG=en_US.UTF-8'"
 
 export MARKPATH=$HOME/.marks
 function recall {
