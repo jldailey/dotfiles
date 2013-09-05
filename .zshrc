@@ -71,10 +71,6 @@ setopt nocorrectall
 # Node settings:
 export NODE_PATH=$HOME/lib/node_modules
 
-alias csc="coffee -r bling -bce"
-alias cs="coffee -r bling -e"
-alias fs="foreman start"
-
 # Go settings:
 export GOROOT=/opt/go
 export GOPATH=/home/jldailey/Projects/go
@@ -119,3 +115,4 @@ function pull-bundles {
 	)
 }
 
+alias sc="screen -D -R"
