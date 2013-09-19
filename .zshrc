@@ -114,7 +114,7 @@ function unmark {
 	rm -i $MARKPATH/$1
 }
 function marks {
-	ls -l $MARKPATH | sed 's/  / /g' | cut -d' ' -f9- | sed 's/ -/\t-/g' && echo
+	ls -l $MARKPATH | sed 's/  / /g' | cut -d' ' -f9- | sed 's/ -/	-/g' && echo
 }
 
 function pull-bundles {
