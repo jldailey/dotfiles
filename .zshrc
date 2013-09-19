@@ -40,6 +40,9 @@ source $ZSH/oh-my-zsh.sh
 # catch this common mistake
 alias cd..="cd .."
 
+# give some handy defaults for screen
+alias sc="screen -DUR"
+
 export PATH=$HOME/bin:$HOME/sbin
 export PATH=$PATH:/usr/local/bin:/usr/local/sbin
 export PATH=$PATH:/usr/bin:/usr/sbin
@@ -76,9 +79,9 @@ setopt nocorrectall
 # Node settings:
 export NODE_PATH=$HOME/lib/node_modules
 
-alias csc="coffee -r bling -bce"
-alias cs="coffee -r bling -e"
-alias fs="foreman start"
+# Coffee settings:
+alias csc="coffee -bce"
+alias cs="coffee -e"
 
 # Go settings:
 export GOROOT=/opt/go
