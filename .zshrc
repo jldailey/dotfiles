@@ -115,11 +115,9 @@ function marks {
 }
 
 function pull-bundles {
-	(cd ~/.vim/bundle &&
-		for i in `ls`
-			do
-				echo Pulling Bundle: $i
-				(cd $i && gco master && git pull) || exit
-			done
-	)
+	for i in `find .vim/bundle -type d -d 1`
+		do
+			echo Pulling Bundle: $i
+			(cd $i && gco master && git pull) || exit
+		done
 }
