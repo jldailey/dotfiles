@@ -40,6 +40,9 @@ source $ZSH/oh-my-zsh.sh
 # catch this common mistake
 alias cd..="cd .."
 
+# give some handy defaults for screen
+alias sc="screen -DUR"
+
 export PATH=$HOME/bin:$HOME/sbin
 export PATH=$PATH:/usr/local/bin:/usr/local/sbin
 export PATH=$PATH:/usr/bin:/usr/sbin
@@ -76,6 +79,7 @@ setopt nocorrectall
 # Node settings:
 export NODE_PATH=$HOME/lib/node_modules
 
+
 # Go settings:
 export GOROOT=/opt/go
 export GOPATH=/home/jldailey/Projects/go
@@ -107,17 +111,15 @@ function unmark {
 	rm -i $MARKPATH/$1
 }
 function marks {
-	ls -l $MARKPATH | sed 's/  / /g' | cut -d' ' -f9- | sed 's/ -/\t-/g' && echo
+	ls -l $MARKPATH | sed 's/  / /g' | cut -d' ' -f9- | sed 's/ -/	-/g' && echo
 }
 
 function pull-bundles {
-	(cd ~/.vim/bundle &&
-		for i in `ls`
-			do
-				echo Pulling Bundle: $i
-				(cd $i && gco master && git pull) || exit
-			done
-	)
+	for i in `find .vim/bundle -maxdepth 1 -type d`
+		do
+			echo Pulling Bundle: $i
+			(cd $i && gco master && git pull) || exit
+		done
 }
 
 alias sc="screen -DR"
