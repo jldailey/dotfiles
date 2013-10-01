@@ -1,4 +1,7 @@
-export TERM=xterm-256color
+if [ -z $STY ]; then
+	# only set the TERM if not running inside screen (let screen control it)
+	export TERM=xterm-256color
+fi
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
