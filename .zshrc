@@ -82,9 +82,6 @@ setopt nocorrectall
 # Node settings:
 export NODE_PATH=$HOME/lib/node_modules
 
-# Coffee settings:
-alias csc="coffee -bce"
-alias cs="coffee -e"
 
 # Go settings:
 export GOROOT=/opt/go
@@ -121,9 +118,11 @@ function marks {
 }
 
 function pull-bundles {
-	for i in `find .vim/bundle -type d -d 1`
+	for i in `find .vim/bundle -maxdepth 1 -type d`
 		do
 			echo Pulling Bundle: $i
 			(cd $i && gco master && git pull) || exit
 		done
 }
+
+alias sc="screen -DR"
