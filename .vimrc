@@ -54,6 +54,8 @@ set number " show line numbers on the left
 set timeoutlen=300 " ms gap between mapping keys
 set visualbell " errors flash instead of beep
 set autoread " dont warn about files that changed on disk, just read them
+set modeline " turn on modelines feature (looks for comments containing file-specific settings)
+set modelines=10 " reads this many lines of the file
 filetype plugin on " load ftplugins
 
 " how to fold
