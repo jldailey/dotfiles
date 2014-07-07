@@ -43,9 +43,6 @@ source $ZSH/oh-my-zsh.sh
 # catch this common mistake
 alias cd..="cd .."
 
-# give some handy defaults for screen
-alias sc="screen -DUR"
-
 export PATH=$HOME/bin:$HOME/sbin
 export PATH=$PATH:/usr/local/bin:/usr/local/sbin
 export PATH=$PATH:/usr/bin:/usr/sbin
@@ -56,7 +53,7 @@ export PATH=$PATH:/usr/local/share/npm/bin
 export PATH=./node_modules/.bin:$PATH
 
 # set up the right editor
-export EDITOR=vi
+export EDITOR=vim
 export VIMGUI=vim
 if [ -x "`which mvim 2> /dev/null`" ]; then
 	export VIMGUI="mvim --remote-tab-silent"
@@ -65,6 +62,7 @@ elif [ -x "`which gvim 2> /dev/null`" ]; then
 fi
 # always bind it to 'vi'
 alias gvim="echo Loading in tab... && $VIMGUI"
+alias vi=vim
 
 if [ -e /Applications ]; then
 	# put XCode on the PATH
@@ -127,3 +125,12 @@ function pull-bundles {
 }
 
 alias sc="screen -DR"
+
+# Vagrant shortcuts
+alias vst="vagrant status"
+alias vsh="vagrant ssh"
+alias vup="vagrant up"
+alias vpr="vagrant provision"
+
+# Nethack manual
+nh() { lynx -dump -nolist -nonumbers http://nethack.wikia.com/wiki/$1 | tail +155 | LC_ALL=C sed -e 's/\[yH5.*\]//' -e 's/\^\[[0-9]*\]//' | less }
