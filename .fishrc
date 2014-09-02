@@ -1,0 +1,10 @@
+
+alias gst="git status"
+alias gco="git checkout"
+
+alias vup="vagrant up"
+alias vsh="vagrant ssh"
+alias vpr="vagrant provision"
+alias vst="vagrant status"
+
+
