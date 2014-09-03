@@ -36,6 +36,7 @@ hi LineNr ctermbg=NONE guibg=NONE
 hi SpecialKey ctermbg=NONE guibg=NONE
 " force the paren-matching colors to be simple so they dont get confused with the cursor
 hi MatchParen ctermbg=black guibg=black ctermfg=white guifg=white
+hi StatusLine ctermbg=darkblue ctermfg=white
 
 
 " General Settings
@@ -53,6 +54,8 @@ set number " show line numbers on the left
 set timeoutlen=300 " ms gap between mapping keys
 set visualbell " errors flash instead of beep
 set autoread " dont warn about files that changed on disk, just read them
+set modeline " turn on modelines feature (looks for comments containing file-specific settings)
+set modelines=10 " reads this many lines of the file
 filetype plugin on " load ftplugins
 
 " how to fold
