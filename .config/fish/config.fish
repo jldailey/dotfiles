@@ -6,5 +6,6 @@ alias vup="vagrant up"
 alias vsh="vagrant ssh"
 alias vpr="vagrant provision"
 alias vst="vagrant status"
+alias lsa="ls -hal"
 
 
