@@ -35,7 +35,7 @@ hi NonText ctermbg=NONE guibg=NONE
 hi LineNr ctermbg=NONE guibg=NONE
 hi SpecialKey ctermbg=NONE guibg=NONE
 " force the paren-matching colors to be simple so they dont get confused with the cursor
-hi MatchParen ctermbg=black guibg=black ctermfg=white guifg=white
+hi MatchParen cterm=underline gui=underline ctermbg=NONE ctermfg=white guibg=NONE guifg=white
 hi StatusLine ctermbg=darkblue ctermfg=white
 
 
