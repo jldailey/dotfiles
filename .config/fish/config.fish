@@ -49,3 +49,5 @@ function fish_prompt --description "Write out a custom prompt"
 	end
 end
 
+
+set -g JAVA_HOME (/usr/libexec/java_home)

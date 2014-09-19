@@ -1,15 +1,11 @@
-let os=substitute(system('uname -o'), '\n', '', '')
-if os == 'Cygwin'
-	let g:browserprog="c:/Users/jldailey/AppData/Local/Google/Chrome/Application/chrome.exe --no-first-run --user-data-dir=C:/Temp "
-else
-	let g:browserprog='google-chrome --no-first-run --user-data-dir=/tmp '
-endif
+" Load the plugin manager
+call pathogen#infect()
 
 " Appearance Settings
-call pathogen#infect()
 syn on
 color darkblue
 color wombat256
+color xoria256
 behave xterm
 if has("gui_running")
 	set guioptions=aegimrLt
@@ -76,7 +72,7 @@ set nocindent " these do.
 " General mappings
 "
 " Toggle line numbers
-map ,l :set number!<Enter>
+:map ,l :set number!<Enter>
 
 " Knock out these (out-dated) default mappings
 nnoremap <F1> <nop>
@@ -84,19 +80,18 @@ nnoremap Q <nop>
 nnoremap K <nop> " causes a `man` lookup, almost never useful today
 
 " Mappings that work on whole indented blocks
-" Disabled because they slow down other z-operations
-" map zd zcdd " fold + delete
-" map z> zc>> " fold + indent
-" map z< zc<< " fold + unindent
-" map zy zcY " fold + yank
+:map ,d zcdd " fold + delete
+:map ,> zc>> " fold + indent
+:map ,< zc<< " fold + unindent
+:map ,y zcY " fold + yank
 
 " bind some build hotkeys
-map  <F5>    :wa<CR>:make debug<CR>
-map  [15~  :wa<CR>:make debug<CR>
-map  <F6>    :wa<CR>:make<CR>
-map  [17~  :wa<CR>:make<CR>
-map  <F7>    :wa<CR>:make run<CR>
-map  [18~  :wa<CR>:make run<CR>
+:map  <F5>    :wa<CR>:make debug<CR>
+:map  [15~  :wa<CR>:make debug<CR>
+:map  <F6>    :wa<CR>:make<CR>
+:map  [17~  :wa<CR>:make<CR>
+:map  <F7>    :wa<CR>:make run<CR>
+:map  [18~  :wa<CR>:make run<CR>
 imap  <F5>   <Esc>:wa<CR>:make debug<CR>
 imap  [15~ <Esc>:wa<CR>:make debug<CR>
 imap  <F6>   <Esc>:wa<CR>:make<CR>
@@ -108,22 +103,22 @@ imap  [18~ <Esc>:wa<CR>:make run<CR>
 inoremap # x<Backspace>#
 
 " Move quickly between splits (in all different terminals, ugh)
-map  <C-Up>    <C-w><Up><C-w>_
-map  0a      <C-w><Up><C-w>_
-map  Oa      <C-w><Up><C-w>_
-map  [1;5A   <C-w><Up><C-w>_
-map  <C-Down>  <C-w><Down><C-w>_
-map  0b      <C-w><Down><C-w>_
-map  Ob      <C-w><Down><C-w>_
-map  [1;5B   <C-w><Down><C-w>_
-map  <C-Left>  <C-w><Left>
-map  0d      <C-w><Left>
-map  Od      <C-w><Left>
-map  [1;5D   <C-w><Left>
-map  <C-Right> <C-w><Right>
-map  0c      <C-w><Right>
-map  Oc      <C-w><Right>
-map  [1;5C   <C-w><Right>
+:map  <C-Up>    <C-w><Up><C-w>_
+:map  0a      <C-w><Up><C-w>_
+:map  Oa      <C-w><Up><C-w>_
+:map  [1;5A   <C-w><Up><C-w>_
+:map  <C-Down>  <C-w><Down><C-w>_
+:map  0b      <C-w><Down><C-w>_
+:map  Ob      <C-w><Down><C-w>_
+:map  [1;5B   <C-w><Down><C-w>_
+:map  <C-Left>  <C-w><Left>
+:map  0d      <C-w><Left>
+:map  Od      <C-w><Left>
+:map  [1;5D   <C-w><Left>
+:map  <C-Right> <C-w><Right>
+:map  0c      <C-w><Right>
+:map  Oc      <C-w><Right>
+:map  [1;5C   <C-w><Right>
 imap <C-Up>    <Esc><C-w><Up><C-w>_
 imap 0a      <Esc><C-w><Up><C-w>_
 imap Oa      <Esc><C-w><Up><C-w>_
@@ -142,20 +137,20 @@ imap Oc      <C-w><Right>
 imap [1;5C   <Esc><C-w><Right>
 
 " Ctrl-D closes file - controversial
-map <C-d> :q<cr>
+:map <C-d> :q<cr>
 imap <C-d> <Esc>:q<cr>
 
 " Ctrl-S saves (not all terminals can send it but just in case)
-map <C-s> :w<cr>
+:map <C-s> :w<cr>
 imap <C-s> <Esc>:w<cr>
 
 " Tab mappings
-map  <C-t>     :tabnew<cr>
-map          :tabnew<cr>
-map  <C-Tab>   :tabnext<cr>
-map  [1;5I   :tabnext<cr>
-map  <C-S-tab> :tabprev<cr>
-map  [1;6I   :tabprev<cr>
+:map  <C-t>     :tabnew<cr>
+:map          :tabnew<cr>
+:map  <C-Tab>   :tabnext<cr>
+:map  [1;5I   :tabnext<cr>
+:map  <C-S-tab> :tabprev<cr>
+:map  [1;6I   :tabprev<cr>
 imap <C-t>     <Esc>:tabnew<cr>
 imap         <Esc>:tabnew<cr>
 imap <C-Tab>   <Esc>:tabnext<cr>
@@ -177,6 +172,8 @@ au BufRead,BufNewFile *.go set filetype=go
 
 " JSON mappins
 au BufRead,BufNewFile *.json set filetype=javascript
+
+au FileType javascript let g:syntastic_javascript_closurecompiler_path="/Users/jldailey/compiler.jar"
 
 " CoffeeScript mappings
 
@@ -203,9 +200,9 @@ endif
 " Configure the Git Gutter plugin
 let g:gitgutter_enabled = 1
 hi SignColumn ctermbg=NONE guibg=NONE
-hi lineAdded ctermfg=green guifg=green
-hi lineRemoved ctermfg=red guifg=red
-hi lineModified ctermfg=yellow guifg=yellow
+hi lineAdded ctermfg=green ctermbg=NONE guifg=green
+hi lineRemoved ctermfg=red ctermbg=NONE guifg=red
+hi lineModified ctermfg=yellow ctermbg=NONE guifg=yellow
 
 " Force files into utf-8 mode
 scriptencoding utf-8
@@ -214,19 +211,4 @@ set encoding=utf-8
 " Show whitespace characters as special symbols
 set listchars=tab:›\ ,precedes:‹,extends:›,trail:…
 set nolist
-map ,L :set list!<CR>
-
-" <C-k> or <S-k> launches a manual for the current keyword in Chrome
-function! g:BrowseManual(text)
-	redir => ft
-	set ft?
-	redir END
-	let ft=split(matchlist(ft, 'filetype=\(.*\)')[1], '\n')[0]
-	if ft == 'coffee'
-		let ft = 'coffeescript'
-	endif
-	execute 'silent! !' . g:browserprog . ' "https://duckduckgo.com/?q=\\%20' .  join(split(ft.' '.a:text, ' '), '\%20') . '" &> /dev/null &'
-endfunction
-noremap <C-k> <Esc>:call g:BrowseManual("<C-r><C-w>")<CR><C-l>
-map <S-k> <C-k>
-
+:map ,L :set list!<CR>
