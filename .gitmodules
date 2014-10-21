@@ -1,51 +1,51 @@
-[submodule ".vim/bundle/nerdtree"]
-	path = .vim/bundle/nerdtree
+[submodule "vim/.vim/bundle/nerdtree"]
+	path = vim/.vim/bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
-[submodule ".vim/bundle/syntastic"]
-	path = .vim/bundle/syntastic
+[submodule "vim/.vim/bundle/syntastic"]
+	path = vim/.vim/bundle/syntastic
 	url = https://github.com/scrooloose/syntastic.git
-[submodule ".vim/bundle/vim-coffee-script"]
-	path = .vim/bundle/vim-coffee-script
+[submodule "vim/.vim/bundle/vim-coffee-script"]
+	path = vim/.vim/bundle/vim-coffee-script
 	url = https://github.com/jldailey/vim-coffee-script.git
-[submodule ".vim/bundle/vim-fugitive"]
-	path = .vim/bundle/vim-fugitive
+[submodule "vim/.vim/bundle/vim-fugitive"]
+	path = vim/.vim/bundle/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive.git
-[submodule ".vim/bundle/vim-tomorrow-theme"]
-	path = .vim/bundle/vim-tomorrow-theme
+[submodule "vim/.vim/bundle/vim-tomorrow-theme"]
+	path = vim/.vim/bundle/vim-tomorrow-theme
 	url = https://github.com/chriskempson/vim-tomorrow-theme.git
-[submodule ".vim/bundle/coffeetags"]
-	path = .vim/bundle/coffeetags
+[submodule "vim/.vim/bundle/coffeetags"]
+	path = vim/.vim/bundle/coffeetags
 	url = https://github.com/lukaszkorecki/CoffeeTags.git
-[submodule ".oh-my-zsh"]
+[submodule "zsh/.oh-my-zsh"]
 	path = zsh/.oh-my-zsh
 	url = https://github.com/jldailey/oh-my-zsh.git
-[submodule ".vim/bundle/vimwiki"]
-	path = .vim/bundle/vimwiki
+[submodule "vim/.vim/bundle/vimwiki"]
+	path = vim/.vim/bundle/vimwiki
 	url = https://github.com/jldailey/vimwiki.git
-[submodule ".vim/bundle/vim-less"]
-	path = .vim/bundle/vim-less
+[submodule "vim/.vim/bundle/vim-less"]
+	path = vim/.vim/bundle/vim-less
 	url = https://github.com/groenewege/vim-less
-[submodule ".vim/bundle/ctrlp.vim"]
-	path = .vim/bundle/ctrlp.vim
+[submodule "vim/.vim/bundle/ctrlp.vim"]
+	path = vim/.vim/bundle/ctrlp.vim
 	url = https://github.com/kien/ctrlp.vim.git
-[submodule ".vim/bundle/vim-gitgutter"]
-	path = .vim/bundle/vim-gitgutter
+[submodule "vim/.vim/bundle/vim-gitgutter"]
+	path = vim/.vim/bundle/vim-gitgutter
 	url = https://github.com/airblade/vim-gitgutter.git
-[submodule ".vim/bundle/tlib_vim"]
-	path = .vim/bundle/tlib_vim
+[submodule "vim/.vim/bundle/tlib_vim"]
+	path = vim/.vim/bundle/tlib_vim
 	url = https://github.com/tomtom/tlib_vim.git
-[submodule ".vim/bundle/vim-addon-mw-utils"]
-	path = .vim/bundle/vim-addon-mw-utils
+[submodule "vim/.vim/bundle/vim-addon-mw-utils"]
+	path = vim/.vim/bundle/vim-addon-mw-utils
 	url = https://github.com/MarcWeber/vim-addon-mw-utils.git
-[submodule ".vim/bundle/vim-snipmate"]
-	path = .vim/bundle/vim-snipmate
+[submodule "vim/.vim/bundle/vim-snipmate"]
+	path = vim/.vim/bundle/vim-snipmate
 	url = https://github.com/garbas/vim-snipmate.git
-[submodule ".vim/bundle/vim-snippets"]
-	path = .vim/bundle/vim-snippets
+[submodule "vim/.vim/bundle/vim-snippets"]
+	path = vim/.vim/bundle/vim-snippets
 	url = https://github.com/honza/vim-snippets.git
-[submodule ".vim/bundle/ack"]
-	path = .vim/bundle/ack
+[submodule "vim/.vim/bundle/ack"]
+	path = vim/.vim/bundle/ack
 	url = https://github.com/mileszs/ack.vim
-[submodule ".vim/bundle/supertab"]
-	path = .vim/bundle/supertab
+[submodule "vim/.vim/bundle/supertab"]
+	path = vim/.vim/bundle/supertab
 	url = https://github.com/ervandew/supertab
