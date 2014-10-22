@@ -24,29 +24,29 @@ function fish_prompt --description "Write out a custom prompt"
 		set -g __first_prompt_git (set_color green)
 	end
 
-	switch $USER
-
-		case root
-
-			if not set -q __fish_prompt_cwd
-				if set -q fish_color_cwd_root
-					set -g __fish_prompt_cwd (set_color $fish_color_cwd_root)
-				else
-					set -g __fish_prompt_cwd (set_color $fish_color_cwd)
-				end
-			end
-
-			echo -n -s "$USER" @ "$__fish_prompt_hostname" ' ' "$__fish_prompt_cwd" (prompt_pwd) "$__fish_prompt_normal" '# '
-
-		case '*'
-
-			if not set -q __fish_prompt_cwd
-				set -g __fish_prompt_cwd (set_color $fish_color_cwd)
-			end
-
-			echo -n -s "$USER" @ "$__fish_prompt_hostname" ' ' "$__fish_prompt_cwd" (prompt_pwd) "$__fish_prompt_normal" (__fish_git_prompt) ' > '
-
+	if not set -q __fish_prompt_cwd
+		set -g __fish_prompt_cwd (set_color $fish_color_cwd)
 	end
+
+	set_color yellow
+	printf '%s' $USER
+	set_color normal
+	printf ' at '
+	set_color magenta
+	printf $__fish_prompt_hostname
+	set_color normal
+	printf ' in '
+	set_color green
+	printf '%s' (prompt_pwd)
+	set_color normal
+	set -l git_prompt (__fish_git_prompt)
+	if test -n "$git_prompt"
+		printf ' on'
+		printf "$git_prompt"
+	end
+	set_color normal
+	printf ' > '
+
 end
 
 if test -e /usr/libexec/java_home
