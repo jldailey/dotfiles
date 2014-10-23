@@ -7,6 +7,8 @@ alias vsh="vagrant ssh"
 alias vpr="vagrant provision"
 alias vst="vagrant status"
 alias lsa="ls -hal"
+alias vi="env SHELL=/bin/bash vim"
+alias vim="env SHELL=/bin/bash vim"
 
 function fish_prompt --description "Write out a custom prompt"
 
