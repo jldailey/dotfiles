@@ -9,6 +9,7 @@ alias vst="vagrant status"
 alias lsa="ls -hal"
 alias vi="env SHELL=/bin/bash vim"
 alias vim="env SHELL=/bin/bash vim"
+alias sc="env SHELL=(which fish) screen -DR"
 
 function _prompt_user
 	set_color yellow
