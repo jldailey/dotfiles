@@ -80,7 +80,8 @@ set nocindent " these do.
 " Knock out these (out-dated) default mappings
 nnoremap <F1> <nop>
 nnoremap Q <nop>
-nnoremap K <nop> " causes a `man` lookup, almost never useful today
+" <Shift-K> causes a `man` lookup, almost never useful today
+nnoremap K <nop>
 
 " Mappings that work on whole indented blocks
 :map ,d zcdd " fold + delete
@@ -106,22 +107,22 @@ imap  [18~ <Esc>:wa<CR>:make run<CR>
 inoremap # x<Backspace>#
 
 " Move quickly between splits (in all different terminals, ugh)
-:map  <C-Up>    <C-w><Up><C-w>_
-:map  0a      <C-w><Up><C-w>_
-:map  Oa      <C-w><Up><C-w>_
-:map  [1;5A   <C-w><Up><C-w>_
-:map  <C-Down>  <C-w><Down><C-w>_
-:map  0b      <C-w><Down><C-w>_
-:map  Ob      <C-w><Down><C-w>_
-:map  [1;5B   <C-w><Down><C-w>_
-:map  <C-Left>  <C-w><Left>
-:map  0d      <C-w><Left>
-:map  Od      <C-w><Left>
-:map  [1;5D   <C-w><Left>
-:map  <C-Right> <C-w><Right>
-:map  0c      <C-w><Right>
-:map  Oc      <C-w><Right>
-:map  [1;5C   <C-w><Right>
+:map <C-Up>    <C-w><Up><C-w>_
+:map 0a      <C-w><Up><C-w>_
+:map Oa      <C-w><Up><C-w>_
+:map [1;5A   <C-w><Up><C-w>_
+:map <C-Down>  <C-w><Down><C-w>_
+:map 0b      <C-w><Down><C-w>_
+:map Ob      <C-w><Down><C-w>_
+:map [1;5B   <C-w><Down><C-w>_
+:map <C-Left>  <C-w><Left>
+:map 0d      <C-w><Left>
+:map Od      <C-w><Left>
+:map [1;5D   <C-w><Left>
+:map <C-Right> <C-w><Right>
+:map 0c      <C-w><Right>
+:map Oc      <C-w><Right>
+:map [1;5C   <C-w><Right>
 imap <C-Up>    <Esc><C-w><Up><C-w>_
 imap 0a      <Esc><C-w><Up><C-w>_
 imap Oa      <Esc><C-w><Up><C-w>_
