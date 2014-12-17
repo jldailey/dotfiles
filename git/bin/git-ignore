@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+if [ -z "$@" ]; then
+	echo Nothing to ignore
+else
+	echo $@ >> .gitignore
+	git commit .gitignore -m "ignoring '$@'"
+fi
