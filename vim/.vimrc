@@ -81,7 +81,7 @@ set nocindent " these do.
 nnoremap <F1> <nop>
 nnoremap Q <nop>
 " <Shift-K> causes a `man` lookup, almost never useful today
-nnoremap K <nop>
+nnoremap K ddpkJ
 
 " Mappings that work on whole indented blocks
 :map ,d zcdd " fold + delete
