@@ -3,6 +3,10 @@
 	email = jesse.dailey@gmail.com
 [core]
 	excludesFile = ~/.cvsignore
+	askpass = /bin/echo
+	whitespace = off
+[advice]
+	statusuoption = false
 [alias]
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 [push]
