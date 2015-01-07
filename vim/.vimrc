@@ -1,3 +1,5 @@
+set shell=/bin/bash " force the use of a POSIX shell
+
 " Load the plugin manager
 call pathogen#infect()
 

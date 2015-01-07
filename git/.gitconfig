@@ -5,6 +5,7 @@
 	excludesFile = ~/.cvsignore
 	askpass = /bin/echo
 	whitespace = off
+	editor = /usr/local/bin/vim
 [advice]
 	statusuoption = false
 [alias]
