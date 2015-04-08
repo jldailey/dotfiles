@@ -34,11 +34,16 @@ hi LineNr ctermbg=NONE guibg=NONE
 hi SpecialKey ctermbg=NONE guibg=NONE
 " force the paren-matching colors to be simple so they dont get confused with the cursor
 hi MatchParen cterm=underline gui=underline ctermbg=NONE ctermfg=white guibg=NONE guifg=white
+
+" yellow/white on blue status line
 hi StatusLine ctermbg=darkblue ctermfg=yellow
 hi StatusLineNC ctermbg=darkblue ctermfg=white
 
+" dark grey comments
 hi Comment ctermfg=darkgrey
 
+" not so abrupt with the TODO comments
+hi Todo ctermfg=yellow ctermbg=NONE cterm=underline
 
 " General Settings
 set exrc
@@ -92,18 +97,18 @@ nnoremap K ddpkJ
 :map ,y zcY " fold + yank
 
 " bind some build hotkeys
-:map  <F5>    :wa<CR>:make debug<CR>
-:map  [15~  :wa<CR>:make debug<CR>
-:map  <F6>    :wa<CR>:make<CR>
-:map  [17~  :wa<CR>:make<CR>
-:map  <F7>    :wa<CR>:make run<CR>
-:map  [18~  :wa<CR>:make run<CR>
-imap  <F5>   <Esc>:wa<CR>:make debug<CR>
-imap  [15~ <Esc>:wa<CR>:make debug<CR>
-imap  <F6>   <Esc>:wa<CR>:make<CR>
-imap  [17~ <Esc>:wa<CR>:make<CR>
-imap  <F7>   <Esc>:wa<CR>:make run<CR>
-imap  [18~ <Esc>:wa<CR>:make run<CR>
+:map  <F5>    :wa<CR>:!make test<CR>
+:map  [15~  :wa<CR>:!make test<CR>
+:map  <F6>    :wa<CR>:!make<CR>
+:map  [17~  :wa<CR>:!make<CR>
+:map  <F7>    :wa<CR>:!make run<CR>
+:map  [18~  :wa<CR>:!make run<CR>
+imap  <F5>   <Esc>:wa<CR>:!make test<CR>
+imap  [15~ <Esc>:wa<CR>:!make test<CR>
+imap  <F6>   <Esc>:wa<CR>:!make<CR>
+imap  [17~ <Esc>:wa<CR>:!make<CR>
+imap  <F7>   <Esc>:wa<CR>:!make run<CR>
+imap  [18~ <Esc>:wa<CR>:!make run<CR>
 
 " dont treat '#' as special
 inoremap # x<Backspace>#
@@ -186,6 +191,7 @@ au FileType javascript let g:syntastic_javascript_closurecompiler_path="/Users/j
 " If you have something visually selected: ',p' will show you the
 " compiled version.
 au FileType coffee vmap ,p y:!coffee -bce '<C-R>"'<CR>
+au FileType coffee vmap ,e y:read !coffee -e 'console.log <C-R>"'<CR>
 
 if executable('coffeetags')
   let g:tagbar_type_coffee = {
