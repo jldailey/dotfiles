@@ -1,0 +1,295 @@
+<?xml version="1.0"?>
+<root>
+<item>
+	<name>ASETNIOP</name>
+
+		<item>
+			<name>ASETNIOP</name> <appendix>Simultaneous mode</appendix>
+				<identifier>remap.asetniop-chords</identifier>
+				<autogen>__SimultaneousKeyPresses__ KeyCode::Q, KeyCode::W, KeyCode::W</autogen>
+				<autogen>__SimultaneousKeyPresses__ KeyCode::Q, KeyCode::E, KeyCode::X</autogen>
+				<autogen>__SimultaneousKeyPresses__ KeyCode::Q, KeyCode::R, KeyCode::F</autogen>
+				<autogen>__SimultaneousKeyPresses__ KeyCode::Q, KeyCode::U, KeyCode::Q</autogen>
+				<autogen>__SimultaneousKeyPresses__ KeyCode::Q, KeyCode::I, KeyCode::KEY_1, ModifierFlag::SHIFT_L</autogen>
+				<autogen>__SimultaneousKeyPresses__ KeyCode::Q, KeyCode::O, KeyCode::KEY_9, ModifierFlag::SHIFT_L</autogen>
+				<autogen>__SimultaneousKeyPresses__ KeyCode::Q, KeyCode::P, KeyCode::SLASH, ModifierFlag::SHIFT_L</autogen>
+				<autogen>__SimultaneousKeyPresses__ KeyCode::W, KeyCode::E, KeyCode::D</autogen>
+				<autogen>__SimultaneousKeyPresses__ KeyCode::W, KeyCode::R, KeyCode::C</autogen>
+				<autogen>__SimultaneousKeyPresses__ KeyCode::W, KeyCode::U, KeyCode::J</autogen>
+				<autogen>__SimultaneousKeyPresses__ KeyCode::W, KeyCode::I, KeyCode::Z</autogen>
+				<autogen>__SimultaneousKeyPresses__ KeyCode::W, KeyCode::O, KeyCode::DOT</autogen>
+				<autogen>__SimultaneousKeyPresses__ KeyCode::W, KeyCode::P, KeyCode::KEY_0, ModifierFlag::SHIFT_L</autogen>
+				<autogen>__SimultaneousKeyPresses__ KeyCode::E, KeyCode::R, KeyCode::R</autogen>
+				<autogen>__SimultaneousKeyPresses__ KeyCode::E, KeyCode::U, KeyCode::Y</autogen>
+				<autogen>__SimultaneousKeyPresses__ KeyCode::E, KeyCode::I, KeyCode::COMMA</autogen>
+				<autogen>__SimultaneousKeyPresses__ KeyCode::E, KeyCode::O, KeyCode::MINUS</autogen>
+				<autogen>__SimultaneousKeyPresses__ KeyCode::E, KeyCode::P, KeyCode::QUOTE</autogen>
+				<autogen>__SimultaneousKeyPresses__ KeyCode::R, KeyCode::U, KeyCode::B</autogen>
+				<autogen>__SimultaneousKeyPresses__ KeyCode::R, KeyCode::I, KeyCode::V</autogen>
+				<autogen>__SimultaneousKeyPresses__ KeyCode::R, KeyCode::O, KeyCode::G</autogen>
+				<autogen>__SimultaneousKeyPresses__ KeyCode::R, KeyCode::P, KeyCode::SLASH</autogen>
+				<autogen>__SimultaneousKeyPresses__ KeyCode::U, KeyCode::I, KeyCode::H</autogen>
+				<autogen>__SimultaneousKeyPresses__ KeyCode::U, KeyCode::O, KeyCode::U</autogen>
+				<autogen>__SimultaneousKeyPresses__ KeyCode::U, KeyCode::P, KeyCode::M</autogen>
+				<autogen>__SimultaneousKeyPresses__ KeyCode::I, KeyCode::O, KeyCode::L</autogen>
+				<autogen>__SimultaneousKeyPresses__ KeyCode::I, KeyCode::P, KeyCode::K</autogen>
+				<autogen>__SimultaneousKeyPresses__ KeyCode::O, KeyCode::P, KeyCode::SEMICOLON</autogen>
+				<autogen>__KeyToKey__ KeyCode::Q, KeyCode::A</autogen>
+				<autogen>__KeyToKey__ KeyCode::W, KeyCode::S</autogen>
+				<autogen>__KeyToKey__ KeyCode::E, KeyCode::E</autogen>
+				<autogen>__KeyToKey__ KeyCode::R, KeyCode::T</autogen>
+				<autogen>__KeyToKey__ KeyCode::U, KeyCode::N</autogen>
+				<autogen>__KeyToKey__ KeyCode::I, KeyCode::I</autogen>
+				<autogen>__KeyToKey__ KeyCode::O, KeyCode::O</autogen>
+				<autogen>__KeyToKey__ KeyCode::P, KeyCode::P</autogen>
+				<autogen>__KeyToKey__ KeyCode::N, KeyCode::VK_STICKY_SHIFT_L</autogen>
+				<autogen>__KeyToKey__ KeyCode::BRACKET_LEFT, KeyCode::DELETE</autogen>
+				<autogen>__KeyToKey__ KeyCode::BRACKET_RIGHT, KeyCode::RETURN</autogen>
+		</item>
+
+		<item>
+			<name>ASETNIOP</name> <appendix>Modifier mode</appendix>
+				<identifier>remap.asetniop-modifiers</identifier>
+				<!-- use each key in the top row as a mode -->
+				<modifierdef>Q_MODE</modifierdef>
+				<modifierdef>W_MODE</modifierdef>
+				<modifierdef>E_MODE</modifierdef>
+				<modifierdef>R_MODE</modifierdef>
+				<modifierdef>T_MODE</modifierdef>
+				<modifierdef>Y_MODE</modifierdef>
+				<modifierdef>U_MODE</modifierdef>
+				<modifierdef>I_MODE</modifierdef>
+				<modifierdef>O_MODE</modifierdef>
+				<modifierdef>P_MODE</modifierdef>
+
+				<block>
+					<modifier_only>ModifierFlag::Q_MODE</modifier_only>
+					<autogen>__KeyToKey__ KeyCode::Q, KeyCode::A</autogen>
+					<autogen>__KeyToKey__ KeyCode::W, KeyCode::W</autogen>
+					<autogen>__KeyToKey__ KeyCode::E, KeyCode::X</autogen>
+					<autogen>__KeyToKey__ KeyCode::R, KeyCode::F</autogen>
+					<autogen>__KeyToKey__ KeyCode::T, KeyCode::KEY_2</autogen>
+					<autogen>__KeyToKey__ KeyCode::Y, KeyCode::KEY_2</autogen>
+					<autogen>__KeyToKey__ KeyCode::U, KeyCode::Q</autogen>
+					<autogen>__KeyToKey__ KeyCode::I, KeyCode::KEY_1, ModifierFlag::SHIFT_L</autogen>
+					<autogen>__KeyToKey__ KeyCode::O, KeyCode::KEY_9, ModifierFlag::SHIFT_L</autogen>
+					<autogen>__KeyToKey__ KeyCode::P, KeyCode::SLASH, ModifierFlag::SHIFT_L</autogen>
+				</block>
+
+				<block>
+					<modifier_only>ModifierFlag::W_MODE</modifier_only>
+					<autogen>__KeyToKey__ KeyCode::Q, KeyCode::W</autogen>
+					<autogen>__KeyToKey__ KeyCode::W, KeyCode::S</autogen>
+					<autogen>__KeyToKey__ KeyCode::E, KeyCode::D</autogen>
+					<autogen>__KeyToKey__ KeyCode::R, KeyCode::C</autogen>
+					<autogen>__KeyToKey__ KeyCode::T, KeyCode::KEY_3</autogen>
+					<autogen>__KeyToKey__ KeyCode::Y, KeyCode::KEY_3</autogen>
+					<autogen>__KeyToKey__ KeyCode::U, KeyCode::J</autogen>
+					<autogen>__KeyToKey__ KeyCode::I, KeyCode::Z</autogen>
+					<autogen>__KeyToKey__ KeyCode::O, KeyCode::DOT</autogen>
+					<autogen>__KeyToKey__ KeyCode::P, KeyCode::KEY_0, ModifierFlag::SHIFT_L</autogen>
+				</block>
+
+				<block>
+					<modifier_only>ModifierFlag::E_MODE</modifier_only>
+					<autogen>__KeyToKey__ KeyCode::Q, KeyCode::X</autogen>
+					<autogen>__KeyToKey__ KeyCode::W, KeyCode::D</autogen>
+					<autogen>__KeyToKey__ KeyCode::E, KeyCode::E</autogen>
+					<autogen>__KeyToKey__ KeyCode::R, KeyCode::R</autogen>
+					<autogen>__KeyToKey__ KeyCode::T, KeyCode::KEY_4</autogen>
+					<autogen>__KeyToKey__ KeyCode::Y, KeyCode::KEY_4</autogen>
+					<autogen>__KeyToKey__ KeyCode::U, KeyCode::Y</autogen>
+					<autogen>__KeyToKey__ KeyCode::I, KeyCode::COMMA</autogen>
+					<autogen>__KeyToKey__ KeyCode::O, KeyCode::MINUS</autogen>
+					<autogen>__KeyToKey__ KeyCode::P, KeyCode::QUOTE</autogen>
+				</block>
+
+				<block>
+					<modifier_only>ModifierFlag::R_MODE</modifier_only>
+					<autogen>__KeyToKey__ KeyCode::Q, KeyCode::F</autogen>
+					<autogen>__KeyToKey__ KeyCode::W, KeyCode::C</autogen>
+					<autogen>__KeyToKey__ KeyCode::E, KeyCode::R</autogen>
+					<autogen>__KeyToKey__ KeyCode::R, KeyCode::T</autogen>
+					<autogen>__KeyToKey__ KeyCode::T, KeyCode::KEY_5</autogen>
+					<autogen>__KeyToKey__ KeyCode::Y, KeyCode::KEY_5</autogen>
+					<autogen>__KeyToKey__ KeyCode::U, KeyCode::B</autogen>
+					<autogen>__KeyToKey__ KeyCode::I, KeyCode::V</autogen>
+					<autogen>__KeyToKey__ KeyCode::O, KeyCode::G</autogen>
+					<autogen>__KeyToKey__ KeyCode::P, KeyCode::SLASH</autogen>
+				</block>
+
+				<block>
+					<modifier_only>ModifierFlag::T_MODE</modifier_only>
+					<autogen>__KeyToKey__ KeyCode::TAB, KeyCode::KEY_1</autogen>
+					<autogen>__KeyToKey__ KeyCode::Q,   KeyCode::KEY_2</autogen>
+					<autogen>__KeyToKey__ KeyCode::W,   KeyCode::KEY_3</autogen>
+					<autogen>__KeyToKey__ KeyCode::E,   KeyCode::KEY_4</autogen>
+					<autogen>__KeyToKey__ KeyCode::R,   KeyCode::KEY_5</autogen>
+					<autogen>__KeyToKey__ KeyCode::T,   KeyCode::T</autogen>
+					<autogen>__KeyToKey__ KeyCode::Y,   KeyCode::KEY_6</autogen>
+					<autogen>__KeyToKey__ KeyCode::U,   KeyCode::KEY_7</autogen>
+					<autogen>__KeyToKey__ KeyCode::I,   KeyCode::KEY_8</autogen>
+					<autogen>__KeyToKey__ KeyCode::O,   KeyCode::KEY_9</autogen>
+					<autogen>__KeyToKey__ KeyCode::P,   KeyCode::KEY_0</autogen>
+				</block>
+
+				<block>
+					<modifier_only>ModifierFlag::Y_MODE</modifier_only>
+					<autogen>__KeyToKey__ KeyCode::TAB, KeyCode::KEY_1</autogen>
+					<autogen>__KeyToKey__ KeyCode::Q,   KeyCode::KEY_2</autogen>
+					<autogen>__KeyToKey__ KeyCode::W,   KeyCode::KEY_3</autogen>
+					<autogen>__KeyToKey__ KeyCode::E,   KeyCode::KEY_4</autogen>
+					<autogen>__KeyToKey__ KeyCode::R,   KeyCode::KEY_5</autogen>
+					<autogen>__KeyToKey__ KeyCode::T,   KeyCode::KEY_6</autogen>
+					<autogen>__KeyToKey__ KeyCode::Y,   KeyCode::Y</autogen>
+					<autogen>__KeyToKey__ KeyCode::U,   KeyCode::KEY_7</autogen>
+					<autogen>__KeyToKey__ KeyCode::I,   KeyCode::KEY_8</autogen>
+					<autogen>__KeyToKey__ KeyCode::O,   KeyCode::KEY_9</autogen>
+					<autogen>__KeyToKey__ KeyCode::P,   KeyCode::KEY_0</autogen>
+				</block>
+
+				<block>
+					<modifier_only>ModifierFlag::U_MODE</modifier_only>
+					<autogen>__KeyToKey__ KeyCode::Q, KeyCode::Q</autogen>
+					<autogen>__KeyToKey__ KeyCode::W, KeyCode::J</autogen>
+					<autogen>__KeyToKey__ KeyCode::E, KeyCode::Y</autogen>
+					<autogen>__KeyToKey__ KeyCode::R, KeyCode::B</autogen>
+					<autogen>__KeyToKey__ KeyCode::T, KeyCode::KEY_7</autogen>
+					<autogen>__KeyToKey__ KeyCode::Y, KeyCode::KEY_7</autogen>
+					<autogen>__KeyToKey__ KeyCode::U, KeyCode::N</autogen>
+					<autogen>__KeyToKey__ KeyCode::I, KeyCode::H</autogen>
+					<autogen>__KeyToKey__ KeyCode::O, KeyCode::U</autogen>
+					<autogen>__KeyToKey__ KeyCode::P, KeyCode::M</autogen>
+				</block>
+
+				<block>
+					<modifier_only>ModifierFlag::I_MODE</modifier_only>
+					<autogen>__KeyToKey__ KeyCode::Q, KeyCode::KEY_1, ModifierFlag::SHIFT_L</autogen>
+					<autogen>__KeyToKey__ KeyCode::W, KeyCode::Z</autogen>
+					<autogen>__KeyToKey__ KeyCode::E, KeyCode::COMMA</autogen>
+					<autogen>__KeyToKey__ KeyCode::R, KeyCode::V</autogen>
+					<autogen>__KeyToKey__ KeyCode::T, KeyCode::KEY_8</autogen>
+					<autogen>__KeyToKey__ KeyCode::Y, KeyCode::KEY_8</autogen>
+					<autogen>__KeyToKey__ KeyCode::U, KeyCode::H</autogen>
+					<autogen>__KeyToKey__ KeyCode::I, KeyCode::I</autogen>
+					<autogen>__KeyToKey__ KeyCode::O, KeyCode::L</autogen>
+					<autogen>__KeyToKey__ KeyCode::P, KeyCode::K</autogen>
+				</block>
+
+				<block>
+					<modifier_only>ModifierFlag::O_MODE</modifier_only>
+					<autogen>__KeyToKey__ KeyCode::Q, KeyCode::KEY_9, ModifierFlag::SHIFT_L</autogen>
+					<autogen>__KeyToKey__ KeyCode::W, KeyCode::DOT</autogen>
+					<autogen>__KeyToKey__ KeyCode::E, KeyCode::MINUS</autogen>
+					<autogen>__KeyToKey__ KeyCode::R, KeyCode::G</autogen>
+					<autogen>__KeyToKey__ KeyCode::T, KeyCode::KEY_9</autogen>
+					<autogen>__KeyToKey__ KeyCode::Y, KeyCode::KEY_9</autogen>
+					<autogen>__KeyToKey__ KeyCode::U, KeyCode::U</autogen>
+					<autogen>__KeyToKey__ KeyCode::I, KeyCode::L</autogen>
+					<autogen>__KeyToKey__ KeyCode::O, KeyCode::O</autogen>
+					<autogen>__KeyToKey__ KeyCode::P, KeyCode::SEMICOLON</autogen>
+				</block>
+
+				<block>
+					<modifier_only>ModifierFlag::P_MODE</modifier_only>
+					<autogen>__KeyToKey__ KeyCode::Q, KeyCode::SLASH, ModifierFlag::SHIFT_L</autogen>
+					<autogen>__KeyToKey__ KeyCode::W, KeyCode::KEY_0, ModifierFlag::SHIFT_L</autogen>
+					<autogen>__KeyToKey__ KeyCode::E, KeyCode::QUOTE</autogen>
+					<autogen>__KeyToKey__ KeyCode::R, KeyCode::SLASH</autogen>
+					<autogen>__KeyToKey__ KeyCode::T, KeyCode::KEY_0</autogen>
+					<autogen>__KeyToKey__ KeyCode::Y, KeyCode::KEY_0</autogen>
+					<autogen>__KeyToKey__ KeyCode::U, KeyCode::M</autogen>
+					<autogen>__KeyToKey__ KeyCode::I, KeyCode::K</autogen>
+					<autogen>__KeyToKey__ KeyCode::O, KeyCode::SEMICOLON</autogen>
+					<autogen>__KeyToKey__ KeyCode::P, KeyCode::P</autogen>
+				</block>
+
+				<!-- these have to be below the other rules, so they have lower precedence -->
+				<autogen>__KeyOverlaidModifier__ KeyCode::Q, KeyCode::VK_MODIFIER_Q_MODE, KeyCode::A </autogen>
+				<autogen>__KeyOverlaidModifier__ KeyCode::W, KeyCode::VK_MODIFIER_W_MODE, KeyCode::S </autogen>
+				<autogen>__KeyOverlaidModifier__ KeyCode::E, KeyCode::VK_MODIFIER_E_MODE, KeyCode::E </autogen>
+				<autogen>__KeyOverlaidModifier__ KeyCode::R, KeyCode::VK_MODIFIER_R_MODE, KeyCode::T </autogen>
+				<autogen>__KeyOverlaidModifier__ KeyCode::T, KeyCode::VK_MODIFIER_T_MODE, KeyCode::BRACKET_LEFT </autogen>
+				<autogen>__KeyOverlaidModifier__ KeyCode::Y, KeyCode::VK_MODIFIER_Y_MODE, KeyCode::BRACKET_RIGHT </autogen>
+				<autogen>__KeyOverlaidModifier__ KeyCode::U, KeyCode::VK_MODIFIER_U_MODE, KeyCode::N </autogen>
+				<autogen>__KeyOverlaidModifier__ KeyCode::I, KeyCode::VK_MODIFIER_I_MODE, KeyCode::I </autogen>
+				<autogen>__KeyOverlaidModifier__ KeyCode::O, KeyCode::VK_MODIFIER_O_MODE, KeyCode::O </autogen>
+				<autogen>__KeyOverlaidModifier__ KeyCode::P, KeyCode::VK_MODIFIER_P_MODE, KeyCode::P </autogen>
+				<autogen>__KeyToKey__ KeyCode::BRACKET_LEFT, KeyCode::DELETE</autogen>
+				<autogen>__KeyToKey__ KeyCode::BRACKET_RIGHT, KeyCode::RETURN</autogen>
+				<autogen>__KeyToKey__ KeyCode::N, KeyCode::VK_STICKY_SHIFT_L</autogen>
+
+		</item>
+
+		<item>
+			<name>Strict mode</name> <appendix>Disable the rest of the alphabet (so you can't cheat)</appendix>
+				<identifier>remap.asetniop-strict</identifier>
+				<autogen>__KeyToKey__ KeyCode::A, KeyCode::VK_NONE</autogen>
+				<autogen>__KeyToKey__ KeyCode::B, KeyCode::VK_NONE</autogen>
+				<autogen>__KeyToKey__ KeyCode::C, KeyCode::VK_NONE</autogen>
+				<!--<autogen>__KeyToKey__ KeyCode::D, KeyCode::VK_NONE</autogen>-->
+				<autogen>__KeyToKey__ KeyCode::E, KeyCode::VK_NONE</autogen>
+				<autogen>__KeyToKey__ KeyCode::F, KeyCode::VK_NONE</autogen>
+				<autogen>__KeyToKey__ KeyCode::G, KeyCode::VK_NONE</autogen>
+				<!-- make an exception for common vim keys -->
+				<!--<autogen>__KeyToKey__ KeyCode::H, KeyCode::VK_NONE</autogen>-->
+				<autogen>__KeyToKey__ KeyCode::I, KeyCode::VK_NONE</autogen>
+				<!--<autogen>__KeyToKey__ KeyCode::J, KeyCode::VK_NONE</autogen>-->
+				<!--<autogen>__KeyToKey__ KeyCode::K, KeyCode::VK_NONE</autogen>-->
+				<!--<autogen>__KeyToKey__ KeyCode::L, KeyCode::VK_NONE</autogen>-->
+				<autogen>__KeyToKey__ KeyCode::M, KeyCode::VK_NONE</autogen>
+				<autogen>__KeyToKey__ KeyCode::N, KeyCode::VK_NONE</autogen>
+				<autogen>__KeyToKey__ KeyCode::O, KeyCode::VK_NONE</autogen>
+				<autogen>__KeyToKey__ KeyCode::P, KeyCode::VK_NONE</autogen>
+				<autogen>__KeyToKey__ KeyCode::Q, KeyCode::VK_NONE</autogen>
+				<autogen>__KeyToKey__ KeyCode::R, KeyCode::VK_NONE</autogen>
+				<!--<autogen>__KeyToKey__ KeyCode::S, KeyCode::VK_NONE</autogen>-->
+				<autogen>__KeyToKey__ KeyCode::T, KeyCode::VK_NONE</autogen>
+				<autogen>__KeyToKey__ KeyCode::U, KeyCode::VK_NONE</autogen>
+				<autogen>__KeyToKey__ KeyCode::V, KeyCode::VK_NONE</autogen>
+				<autogen>__KeyToKey__ KeyCode::W, KeyCode::VK_NONE</autogen>
+				<!--<autogen>__KeyToKey__ KeyCode::X, KeyCode::VK_NONE</autogen>-->
+				<autogen>__KeyToKey__ KeyCode::Y, KeyCode::VK_NONE</autogen>
+				<autogen>__KeyToKey__ KeyCode::Z, KeyCode::VK_NONE</autogen>
+		</item>
+
+		<item>
+			<name>C as Sticky Ctrl</name> <identifier>remap.asetniop-ctrl</identifier>
+				<modifierdef>C_MODE</modifierdef>
+				<block>
+					<modifier_not>ModifierFlag::C_MODE</modifier_not>
+					<autogen>__KeyToKey__ KeyCode::C, KeyCode::VK_STICKY_C_MODE_FORCE_ON </autogen>
+				</block>
+				<block>
+					<modifier_only>ModifierFlag::C_MODE</modifier_only>
+					<autogen>__KeyToKey__ KeyCode::ESCAPE, KeyCode::VK_STICKY_C_MODE_FORCE_OFF </autogen>
+					<autogen>__KeyToKey__ KeyCode::A, KeyCode::A, ModifierFlag::CONTROL_L, KeyCode::VK_STICKY_C_MODE_FORCE_OFF </autogen>
+					<autogen>__KeyToKey__ KeyCode::B, KeyCode::B, ModifierFlag::CONTROL_L, KeyCode::VK_STICKY_C_MODE_FORCE_OFF </autogen>
+					<autogen>__KeyToKey__ KeyCode::C, KeyCode::C, ModifierFlag::CONTROL_L, KeyCode::VK_STICKY_C_MODE_FORCE_OFF </autogen>
+					<autogen>__KeyToKey__ KeyCode::D, KeyCode::D, ModifierFlag::CONTROL_L, KeyCode::VK_STICKY_C_MODE_FORCE_OFF </autogen>
+					<autogen>__KeyToKey__ KeyCode::E, KeyCode::E, ModifierFlag::CONTROL_L, KeyCode::VK_STICKY_C_MODE_FORCE_OFF </autogen>
+					<autogen>__KeyToKey__ KeyCode::F, KeyCode::F, ModifierFlag::CONTROL_L, KeyCode::VK_STICKY_C_MODE_FORCE_OFF </autogen>
+					<autogen>__KeyToKey__ KeyCode::G, KeyCode::G, ModifierFlag::CONTROL_L, KeyCode::VK_STICKY_C_MODE_FORCE_OFF </autogen>
+					<autogen>__KeyToKey__ KeyCode::H, KeyCode::H, ModifierFlag::CONTROL_L, KeyCode::VK_STICKY_C_MODE_FORCE_OFF </autogen>
+					<autogen>__KeyToKey__ KeyCode::I, KeyCode::I, ModifierFlag::CONTROL_L, KeyCode::VK_STICKY_C_MODE_FORCE_OFF </autogen>
+					<autogen>__KeyToKey__ KeyCode::J, KeyCode::J, ModifierFlag::CONTROL_L, KeyCode::VK_STICKY_C_MODE_FORCE_OFF </autogen>
+					<autogen>__KeyToKey__ KeyCode::K, KeyCode::K, ModifierFlag::CONTROL_L, KeyCode::VK_STICKY_C_MODE_FORCE_OFF </autogen>
+					<autogen>__KeyToKey__ KeyCode::L, KeyCode::L, ModifierFlag::CONTROL_L, KeyCode::VK_STICKY_C_MODE_FORCE_OFF </autogen>
+					<autogen>__KeyToKey__ KeyCode::M, KeyCode::M, ModifierFlag::CONTROL_L, KeyCode::VK_STICKY_C_MODE_FORCE_OFF </autogen>
+					<autogen>__KeyToKey__ KeyCode::N, KeyCode::N, ModifierFlag::CONTROL_L, KeyCode::VK_STICKY_C_MODE_FORCE_OFF </autogen>
+					<autogen>__KeyToKey__ KeyCode::O, KeyCode::O, ModifierFlag::CONTROL_L, KeyCode::VK_STICKY_C_MODE_FORCE_OFF </autogen>
+					<autogen>__KeyToKey__ KeyCode::P, KeyCode::P, ModifierFlag::CONTROL_L, KeyCode::VK_STICKY_C_MODE_FORCE_OFF </autogen>
+					<autogen>__KeyToKey__ KeyCode::Q, KeyCode::Q, ModifierFlag::CONTROL_L, KeyCode::VK_STICKY_C_MODE_FORCE_OFF </autogen>
+					<autogen>__KeyToKey__ KeyCode::R, KeyCode::R, ModifierFlag::CONTROL_L, KeyCode::VK_STICKY_C_MODE_FORCE_OFF </autogen>
+					<autogen>__KeyToKey__ KeyCode::S, KeyCode::S, ModifierFlag::CONTROL_L, KeyCode::VK_STICKY_C_MODE_FORCE_OFF </autogen>
+					<autogen>__KeyToKey__ KeyCode::T, KeyCode::T, ModifierFlag::CONTROL_L, KeyCode::VK_STICKY_C_MODE_FORCE_OFF </autogen>
+					<autogen>__KeyToKey__ KeyCode::U, KeyCode::U, ModifierFlag::CONTROL_L, KeyCode::VK_STICKY_C_MODE_FORCE_OFF </autogen>
+					<autogen>__KeyToKey__ KeyCode::V, KeyCode::V, ModifierFlag::CONTROL_L, KeyCode::VK_STICKY_C_MODE_FORCE_OFF </autogen>
+					<autogen>__KeyToKey__ KeyCode::W, KeyCode::W, ModifierFlag::CONTROL_L, KeyCode::VK_STICKY_C_MODE_FORCE_OFF </autogen>
+					<autogen>__KeyToKey__ KeyCode::X, KeyCode::X, ModifierFlag::CONTROL_L, KeyCode::VK_STICKY_C_MODE_FORCE_OFF </autogen>
+					<autogen>__KeyToKey__ KeyCode::Y, KeyCode::Y, ModifierFlag::CONTROL_L, KeyCode::VK_STICKY_C_MODE_FORCE_OFF </autogen>
+					<autogen>__KeyToKey__ KeyCode::Z, KeyCode::Z, ModifierFlag::CONTROL_L, KeyCode::VK_STICKY_C_MODE_FORCE_OFF </autogen>
+				</block>
+		</item>
+</item>
+</root>
