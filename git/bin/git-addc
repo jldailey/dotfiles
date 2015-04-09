@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+if [ -z "$@" ]; then
+	echo Nothing to add
+else
+	git add $@
+	git commit -m "adding '$@'"
+fi
