@@ -1,0 +1,53 @@
+
+<?xml version="1.0"?>
+<root>
+<item>
+	<name>ASETNIOP</name>
+
+		<item>
+			<name>ASETNIOP</name> <appendix>Simultaneous mode</appendix>
+				<identifier>remap.asetniop-chords</identifier>
+				<autogen>__SimultaneousKeyPresses__ KeyCode::Q, KeyCode::W, KeyCode::W</autogen>
+				<autogen>__SimultaneousKeyPresses__ KeyCode::Q, KeyCode::E, KeyCode::X</autogen>
+				<autogen>__SimultaneousKeyPresses__ KeyCode::Q, KeyCode::R, KeyCode::F</autogen>
+				<autogen>__SimultaneousKeyPresses__ KeyCode::Q, KeyCode::U, KeyCode::Q</autogen>
+				<autogen>__SimultaneousKeyPresses__ KeyCode::Q, KeyCode::I, KeyCode::KEY_1, ModifierFlag::SHIFT_L</autogen>
+				<autogen>__SimultaneousKeyPresses__ KeyCode::Q, KeyCode::O, KeyCode::KEY_9, ModifierFlag::SHIFT_L</autogen>
+				<autogen>__SimultaneousKeyPresses__ KeyCode::Q, KeyCode::P, KeyCode::SLASH, ModifierFlag::SHIFT_L</autogen>
+				<autogen>__SimultaneousKeyPresses__ KeyCode::W, KeyCode::E, KeyCode::D</autogen>
+				<autogen>__SimultaneousKeyPresses__ KeyCode::W, KeyCode::R, KeyCode::C</autogen>
+				<autogen>__SimultaneousKeyPresses__ KeyCode::W, KeyCode::U, KeyCode::J</autogen>
+				<autogen>__SimultaneousKeyPresses__ KeyCode::W, KeyCode::I, KeyCode::Z</autogen>
+				<autogen>__SimultaneousKeyPresses__ KeyCode::W, KeyCode::O, KeyCode::DOT</autogen>
+				<autogen>__SimultaneousKeyPresses__ KeyCode::W, KeyCode::P, KeyCode::KEY_0, ModifierFlag::SHIFT_L</autogen>
+				<autogen>__SimultaneousKeyPresses__ KeyCode::E, KeyCode::R, KeyCode::R</autogen>
+				<autogen>__SimultaneousKeyPresses__ KeyCode::E, KeyCode::U, KeyCode::Y</autogen>
+				<autogen>__SimultaneousKeyPresses__ KeyCode::E, KeyCode::I, KeyCode::COMMA</autogen>
+				<autogen>__SimultaneousKeyPresses__ KeyCode::E, KeyCode::O, KeyCode::MINUS</autogen>
+				<autogen>__SimultaneousKeyPresses__ KeyCode::E, KeyCode::P, KeyCode::QUOTE</autogen>
+				<autogen>__SimultaneousKeyPresses__ KeyCode::R, KeyCode::U, KeyCode::B</autogen>
+				<autogen>__SimultaneousKeyPresses__ KeyCode::R, KeyCode::I, KeyCode::V</autogen>
+				<autogen>__SimultaneousKeyPresses__ KeyCode::R, KeyCode::O, KeyCode::G</autogen>
+				<autogen>__SimultaneousKeyPresses__ KeyCode::R, KeyCode::P, KeyCode::SLASH</autogen>
+				<autogen>__SimultaneousKeyPresses__ KeyCode::U, KeyCode::I, KeyCode::H</autogen>
+				<autogen>__SimultaneousKeyPresses__ KeyCode::U, KeyCode::O, KeyCode::U</autogen>
+				<autogen>__SimultaneousKeyPresses__ KeyCode::U, KeyCode::P, KeyCode::M</autogen>
+				<autogen>__SimultaneousKeyPresses__ KeyCode::I, KeyCode::O, KeyCode::L</autogen>
+				<autogen>__SimultaneousKeyPresses__ KeyCode::I, KeyCode::P, KeyCode::K</autogen>
+				<autogen>__SimultaneousKeyPresses__ KeyCode::O, KeyCode::P, KeyCode::SEMICOLON</autogen>
+				<autogen>__KeyToKey__ KeyCode::Q, KeyCode::A</autogen>
+				<autogen>__KeyToKey__ KeyCode::W, KeyCode::S</autogen>
+				<autogen>__KeyToKey__ KeyCode::E, KeyCode::E</autogen>
+				<autogen>__KeyToKey__ KeyCode::R, KeyCode::T</autogen>
+				<autogen>__KeyToKey__ KeyCode::U, KeyCode::N</autogen>
+				<autogen>__KeyToKey__ KeyCode::I, KeyCode::I</autogen>
+				<autogen>__KeyToKey__ KeyCode::O, KeyCode::O</autogen>
+				<autogen>__KeyToKey__ KeyCode::P, KeyCode::P</autogen>
+				<autogen>__KeyToKey__ KeyCode::N, KeyCode::VK_STICKY_SHIFT_L</autogen>
+				<autogen>__KeyToKey__ KeyCode::BRACKET_LEFT, KeyCode::DELETE</autogen>
+				<autogen>__KeyToKey__ KeyCode::BRACKET_RIGHT, KeyCode::RETURN</autogen>
+		</item>
+
+		<item>
+			<name>ASETNIOP</name> <appendix>Modifier mode</appendix>
+				<identifier>remap.asetniop-modifiers</identifier>

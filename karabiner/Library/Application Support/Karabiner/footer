@@ -1,0 +1,81 @@
+
+		</item>
+
+		<item>
+			<name>C as Sticky Ctrl</name> <identifier>remap.asetniop-ctrl</identifier>
+				<modifierdef>C_MODE</modifierdef>
+				<block>
+					<modifier_not>ModifierFlag::C_MODE | ModifierFlag::NONE</modifier_not>
+					<autogen>__KeyToKey__ KeyCode::C, KeyCode::VK_STICKY_C_MODE_FORCE_ON </autogen>
+				</block>
+
+				<block>
+					<modifier_only>ModifierFlag::C_MODE</modifier_only>
+					<autogen>__KeyToKey__ KeyCode::ESCAPE, KeyCode::VK_STICKY_C_MODE_FORCE_OFF </autogen>
+					<autogen>__KeyToKey__ KeyCode::A, KeyCode::A, ModifierFlag::CONTROL_L, KeyCode::VK_STICKY_C_MODE_FORCE_OFF </autogen>
+					<autogen>__KeyToKey__ KeyCode::B, KeyCode::B, ModifierFlag::CONTROL_L, KeyCode::VK_STICKY_C_MODE_FORCE_OFF </autogen>
+					<autogen>__KeyToKey__ KeyCode::C, KeyCode::C, ModifierFlag::CONTROL_L, KeyCode::VK_STICKY_C_MODE_FORCE_OFF </autogen>
+					<autogen>__KeyToKey__ KeyCode::D, KeyCode::D, ModifierFlag::CONTROL_L, KeyCode::VK_STICKY_C_MODE_FORCE_OFF </autogen>
+					<autogen>__KeyToKey__ KeyCode::E, KeyCode::E, ModifierFlag::CONTROL_L, KeyCode::VK_STICKY_C_MODE_FORCE_OFF </autogen>
+					<autogen>__KeyToKey__ KeyCode::F, KeyCode::F, ModifierFlag::CONTROL_L, KeyCode::VK_STICKY_C_MODE_FORCE_OFF </autogen>
+					<autogen>__KeyToKey__ KeyCode::G, KeyCode::G, ModifierFlag::CONTROL_L, KeyCode::VK_STICKY_C_MODE_FORCE_OFF </autogen>
+					<autogen>__KeyToKey__ KeyCode::H, KeyCode::H, ModifierFlag::CONTROL_L, KeyCode::VK_STICKY_C_MODE_FORCE_OFF </autogen>
+					<autogen>__KeyToKey__ KeyCode::I, KeyCode::I, ModifierFlag::CONTROL_L, KeyCode::VK_STICKY_C_MODE_FORCE_OFF </autogen>
+					<autogen>__KeyToKey__ KeyCode::J, KeyCode::J, ModifierFlag::CONTROL_L, KeyCode::VK_STICKY_C_MODE_FORCE_OFF </autogen>
+					<autogen>__KeyToKey__ KeyCode::K, KeyCode::K, ModifierFlag::CONTROL_L, KeyCode::VK_STICKY_C_MODE_FORCE_OFF </autogen>
+					<autogen>__KeyToKey__ KeyCode::L, KeyCode::L, ModifierFlag::CONTROL_L, KeyCode::VK_STICKY_C_MODE_FORCE_OFF </autogen>
+					<autogen>__KeyToKey__ KeyCode::M, KeyCode::M, ModifierFlag::CONTROL_L, KeyCode::VK_STICKY_C_MODE_FORCE_OFF </autogen>
+					<autogen>__KeyToKey__ KeyCode::N, KeyCode::N, ModifierFlag::CONTROL_L, KeyCode::VK_STICKY_C_MODE_FORCE_OFF </autogen>
+					<autogen>__KeyToKey__ KeyCode::O, KeyCode::O, ModifierFlag::CONTROL_L, KeyCode::VK_STICKY_C_MODE_FORCE_OFF </autogen>
+					<autogen>__KeyToKey__ KeyCode::P, KeyCode::P, ModifierFlag::CONTROL_L, KeyCode::VK_STICKY_C_MODE_FORCE_OFF </autogen>
+					<autogen>__KeyToKey__ KeyCode::Q, KeyCode::Q, ModifierFlag::CONTROL_L, KeyCode::VK_STICKY_C_MODE_FORCE_OFF </autogen>
+					<autogen>__KeyToKey__ KeyCode::R, KeyCode::R, ModifierFlag::CONTROL_L, KeyCode::VK_STICKY_C_MODE_FORCE_OFF </autogen>
+					<autogen>__KeyToKey__ KeyCode::S, KeyCode::S, ModifierFlag::CONTROL_L, KeyCode::VK_STICKY_C_MODE_FORCE_OFF </autogen>
+					<autogen>__KeyToKey__ KeyCode::T, KeyCode::T, ModifierFlag::CONTROL_L, KeyCode::VK_STICKY_C_MODE_FORCE_OFF </autogen>
+					<autogen>__KeyToKey__ KeyCode::U, KeyCode::U, ModifierFlag::CONTROL_L, KeyCode::VK_STICKY_C_MODE_FORCE_OFF </autogen>
+					<autogen>__KeyToKey__ KeyCode::V, KeyCode::V, ModifierFlag::CONTROL_L, KeyCode::VK_STICKY_C_MODE_FORCE_OFF </autogen>
+					<autogen>__KeyToKey__ KeyCode::W, KeyCode::W, ModifierFlag::CONTROL_L, KeyCode::VK_STICKY_C_MODE_FORCE_OFF </autogen>
+					<autogen>__KeyToKey__ KeyCode::X, KeyCode::X, ModifierFlag::CONTROL_L, KeyCode::VK_STICKY_C_MODE_FORCE_OFF </autogen>
+					<autogen>__KeyToKey__ KeyCode::Y, KeyCode::Y, ModifierFlag::CONTROL_L, KeyCode::VK_STICKY_C_MODE_FORCE_OFF </autogen>
+					<autogen>__KeyToKey__ KeyCode::Z, KeyCode::Z, ModifierFlag::CONTROL_L, KeyCode::VK_STICKY_C_MODE_FORCE_OFF </autogen>
+				</block>
+		</item>
+
+		<!-- Strict mode should always be last -->
+		<item>
+			<name>Strict mode</name> <appendix>Disable the rest of the alphabet (so you can't cheat)</appendix>
+				<identifier>remap.asetniop-strict</identifier>
+				<!-- let all keys work normally when any modifier is on -->
+				<modifier_only>ModifierFlag::NONE</modifier_only>
+
+				<autogen>__KeyToKey__ KeyCode::A, KeyCode::VK_NONE</autogen>
+				<autogen>__KeyToKey__ KeyCode::B, KeyCode::VK_NONE</autogen>
+				<autogen>__KeyToKey__ KeyCode::C, KeyCode::VK_NONE</autogen>
+				<!--<autogen>__KeyToKey__ KeyCode::D, KeyCode::VK_NONE</autogen>-->
+				<autogen>__KeyToKey__ KeyCode::E, KeyCode::VK_NONE</autogen>
+				<autogen>__KeyToKey__ KeyCode::F, KeyCode::VK_NONE</autogen>
+				<autogen>__KeyToKey__ KeyCode::G, KeyCode::VK_NONE</autogen>
+				<!-- make an exception for common vim keys -->
+				<!--<autogen>__KeyToKey__ KeyCode::H, KeyCode::VK_NONE</autogen>-->
+				<autogen>__KeyToKey__ KeyCode::I, KeyCode::VK_NONE</autogen>
+				<!--<autogen>__KeyToKey__ KeyCode::J, KeyCode::VK_NONE</autogen>-->
+				<!--<autogen>__KeyToKey__ KeyCode::K, KeyCode::VK_NONE</autogen>-->
+				<!--<autogen>__KeyToKey__ KeyCode::L, KeyCode::VK_NONE</autogen>-->
+				<autogen>__KeyToKey__ KeyCode::M, KeyCode::VK_NONE</autogen>
+				<autogen>__KeyToKey__ KeyCode::N, KeyCode::VK_NONE</autogen>
+				<autogen>__KeyToKey__ KeyCode::O, KeyCode::VK_NONE</autogen>
+				<autogen>__KeyToKey__ KeyCode::P, KeyCode::VK_NONE</autogen>
+				<autogen>__KeyToKey__ KeyCode::Q, KeyCode::VK_NONE</autogen>
+				<autogen>__KeyToKey__ KeyCode::R, KeyCode::VK_NONE</autogen>
+				<!--<autogen>__KeyToKey__ KeyCode::S, KeyCode::VK_NONE</autogen>-->
+				<autogen>__KeyToKey__ KeyCode::T, KeyCode::VK_NONE</autogen>
+				<autogen>__KeyToKey__ KeyCode::U, KeyCode::VK_NONE</autogen>
+				<autogen>__KeyToKey__ KeyCode::V, KeyCode::VK_NONE</autogen>
+				<autogen>__KeyToKey__ KeyCode::W, KeyCode::VK_NONE</autogen>
+				<autogen>__KeyToKey__ KeyCode::X, KeyCode::VK_NONE</autogen>
+				<autogen>__KeyToKey__ KeyCode::Y, KeyCode::VK_NONE</autogen>
+				<autogen>__KeyToKey__ KeyCode::Z, KeyCode::VK_NONE</autogen>
+		</item>
+
+</item>
+</root>
