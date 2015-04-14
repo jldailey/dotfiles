@@ -5,9 +5,20 @@ call pathogen#infect()
 
 " Appearance Settings
 syn on
+
 color darkblue
 color wombat256
 color xoria256
+color mustang
+" yellow/white on blue status line
+hi StatusLine ctermbg=darkblue ctermfg=yellow
+hi StatusLineNC ctermbg=darkblue ctermfg=white
+
+" Override with a purplish scheme
+" color maroloccio
+" hi StatusLine cterm=underline ctermbg=236 ctermfg=11
+" hi StatusLineNC cterm=underline
+
 behave xterm
 if has("gui_running")
 	set guioptions=aegimrLt
@@ -24,23 +35,48 @@ else
 	hi Normal ctermbg=NONE
 endif
 
+
 " override certain colors in every scheme
 "
 " make Folded text gray with no background
 hi Folded ctermfg=grey ctermbg=NONE guifg=gray guibg=NONE
+" dark grey comments
+hi Comment ctermfg=darkgrey
 " clear backgrounds where they aren't needed
-hi NonText ctermbg=NONE guibg=NONE
-hi LineNr ctermbg=NONE guibg=NONE
-hi SpecialKey ctermbg=NONE guibg=NONE
+hi NonText     ctermbg=NONE guibg=NONE
+hi LineNr      ctermbg=NONE guibg=NONE
+hi SpecialKey  ctermbg=NONE guibg=NONE
+hi SpecialChar ctermbg=NONE guibg=NONE
+hi Identifier  ctermbg=NONE guibg=NONE
+hi SpellBad    ctermbg=NONE guibg=NONE
+hi SpellCap    ctermbg=NONE guibg=NONE
+hi SpellRare   ctermbg=NONE guibg=NONE
+hi SpellLocal  ctermbg=NONE guibg=NONE
+hi ColorColumn ctermbg=NONE guibg=NONE
+hi Comment     ctermbg=NONE guibg=NONE
+hi Constant    ctermbg=NONE guibg=NONE
+hi Special     ctermbg=NONE guibg=NONE
+hi Identifier  ctermbg=NONE guibg=NONE
+hi Statement   ctermbg=NONE guibg=NONE
+hi PreProc     ctermbg=NONE guibg=NONE
+hi Type        ctermbg=NONE guibg=NONE
+hi Underlined  ctermbg=NONE guibg=NONE
+hi Ignore      ctermbg=NONE guibg=NONE
+hi Error       ctermbg=NONE guibg=NONE
+hi Todo        ctermbg=NONE guibg=NONE
+hi String      ctermbg=NONE guibg=NONE
+hi Character   ctermbg=NONE guibg=NONE
+hi Number      ctermbg=NONE guibg=NONE
+hi Boolean     ctermbg=NONE guibg=NONE
+hi Float       ctermbg=NONE guibg=NONE
+hi Function    ctermbg=NONE guibg=NONE
+hi Conditional ctermbg=NONE guibg=NONE
+hi Repeat      ctermbg=NONE guibg=NONE
+hi Label       ctermbg=NONE guibg=NONE
+hi Operator    ctermbg=NONE guibg=NONE
 " force the paren-matching colors to be simple so they dont get confused with the cursor
 hi MatchParen cterm=underline gui=underline ctermbg=NONE ctermfg=white guibg=NONE guifg=white
 
-" yellow/white on blue status line
-hi StatusLine ctermbg=darkblue ctermfg=yellow
-hi StatusLineNC ctermbg=darkblue ctermfg=white
-
-" dark grey comments
-hi Comment ctermfg=darkgrey
 
 " not so abrupt with the TODO comments
 hi Todo ctermfg=yellow ctermbg=NONE cterm=underline
