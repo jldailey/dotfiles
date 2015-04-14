@@ -1,3 +1,4 @@
+
 <?xml version="1.0"?>
 <root>
 <item>
@@ -50,174 +51,146 @@
 		<item>
 			<name>ASETNIOP</name> <appendix>Modifier mode</appendix>
 				<identifier>remap.asetniop-modifiers</identifier>
-				<!-- use each key in the top row as a mode -->
+
+
+				<modifierdef>ERU_MODE</modifierdef>
+				<modifierdef>ERI_MODE</modifierdef>
+				<modifierdef>QW_MODE</modifierdef>
+				<modifierdef>QP_MODE</modifierdef>
+				<modifierdef>QO_MODE</modifierdef>
+				<modifierdef>QI_MODE</modifierdef>
+				<modifierdef>ER_MODE</modifierdef>
 				<modifierdef>Q_MODE</modifierdef>
 				<modifierdef>W_MODE</modifierdef>
 				<modifierdef>E_MODE</modifierdef>
 				<modifierdef>R_MODE</modifierdef>
-				<modifierdef>T_MODE</modifierdef>
-				<modifierdef>Y_MODE</modifierdef>
 				<modifierdef>U_MODE</modifierdef>
 				<modifierdef>I_MODE</modifierdef>
 				<modifierdef>O_MODE</modifierdef>
 				<modifierdef>P_MODE</modifierdef>
-
+				<block>
+					<modifier_only>ModifierFlag::ERU_MODE</modifier_only>
+					<autogen>__KeyToKey__ KeyCode::I, KeyCode::T, KeyCode::H, KeyCode::E </autogen>
+				</block>
+				<block>
+					<modifier_only>ModifierFlag::ERI_MODE</modifier_only>
+					<autogen>__KeyToKey__ KeyCode::U, KeyCode::T, KeyCode::H, KeyCode::E </autogen>
+				</block>
+				<block>
+					<modifier_only>ModifierFlag::QW_MODE</modifier_only>
+					<autogen>__KeyToKey__ KeyCode::E, KeyCode::W, KeyCode::E </autogen>
+				</block>
+				<block>
+					<modifier_only>ModifierFlag::QP_MODE</modifier_only>
+					<autogen>__KeyToKey__ KeyCode::O, KeyCode::MINUS, KeyCode::DOT, ModifierFlag::SHIFT_L </autogen>
+					<autogen>__KeyToKey__ KeyCode::I, KeyCode::EQUAL, KeyCode::DOT, ModifierFlag::SHIFT_L </autogen>
+				</block>
+				<block>
+					<modifier_only>ModifierFlag::QO_MODE</modifier_only>
+					<autogen>__KeyToKey__ KeyCode::P, KeyCode::MINUS, KeyCode::DOT, ModifierFlag::SHIFT_L </autogen>
+				</block>
+				<block>
+					<modifier_only>ModifierFlag::QI_MODE</modifier_only>
+					<autogen>__KeyToKey__ KeyCode::P, KeyCode::EQUAL, KeyCode::DOT, ModifierFlag::SHIFT_L </autogen>
+				</block>
+				<block>
+					<modifier_only>ModifierFlag::ER_MODE</modifier_only>
+					<autogen>__KeyOverlaidModifier__ KeyCode::U, KeyCode::VK_MODIFIER_ERU_MODE, KeyCode::Y </autogen>
+					<autogen>__KeyOverlaidModifier__ KeyCode::I, KeyCode::VK_MODIFIER_ERI_MODE, KeyCode::R, KeyCode::I </autogen>
+				</block>
 				<block>
 					<modifier_only>ModifierFlag::Q_MODE</modifier_only>
-					<autogen>__KeyToKey__ KeyCode::Q, KeyCode::A</autogen>
-					<autogen>__KeyToKey__ KeyCode::W, KeyCode::W</autogen>
-					<autogen>__KeyToKey__ KeyCode::E, KeyCode::X</autogen>
-					<autogen>__KeyToKey__ KeyCode::R, KeyCode::F</autogen>
-					<autogen>__KeyToKey__ KeyCode::T, KeyCode::KEY_2</autogen>
-					<autogen>__KeyToKey__ KeyCode::Y, KeyCode::KEY_2</autogen>
-					<autogen>__KeyToKey__ KeyCode::U, KeyCode::Q</autogen>
-					<autogen>__KeyToKey__ KeyCode::I, KeyCode::KEY_1, ModifierFlag::SHIFT_L</autogen>
-					<autogen>__KeyToKey__ KeyCode::O, KeyCode::KEY_9, ModifierFlag::SHIFT_L</autogen>
-					<autogen>__KeyToKey__ KeyCode::P, KeyCode::SLASH, ModifierFlag::SHIFT_L</autogen>
+					<autogen>__KeyOverlaidModifier__ KeyCode::W, KeyCode::VK_MODIFIER_QW_MODE, KeyCode::W </autogen>
+					<autogen>__KeyToKey__ KeyCode::E, KeyCode::X </autogen>
+					<autogen>__KeyToKey__ KeyCode::R, KeyCode::F </autogen>
+					<autogen>__KeyToKey__ KeyCode::U, KeyCode::Q </autogen>
+					<autogen>__KeyOverlaidModifier__ KeyCode::I, KeyCode::VK_MODIFIER_QI_MODE, KeyCode::KEY_1, ModifierFlag::SHIFT_L </autogen>
+					<autogen>__KeyOverlaidModifier__ KeyCode::O, KeyCode::VK_MODIFIER_QO_MODE, KeyCode::QUOTE </autogen>
+					<autogen>__KeyOverlaidModifier__ KeyCode::P, KeyCode::VK_MODIFIER_QP_MODE, KeyCode::KEY_0, ModifierFlag::SHIFT_L </autogen>
 				</block>
-
 				<block>
 					<modifier_only>ModifierFlag::W_MODE</modifier_only>
-					<autogen>__KeyToKey__ KeyCode::Q, KeyCode::W</autogen>
-					<autogen>__KeyToKey__ KeyCode::W, KeyCode::S</autogen>
-					<autogen>__KeyToKey__ KeyCode::E, KeyCode::D</autogen>
-					<autogen>__KeyToKey__ KeyCode::R, KeyCode::C</autogen>
-					<autogen>__KeyToKey__ KeyCode::T, KeyCode::KEY_3</autogen>
-					<autogen>__KeyToKey__ KeyCode::Y, KeyCode::KEY_3</autogen>
-					<autogen>__KeyToKey__ KeyCode::U, KeyCode::J</autogen>
-					<autogen>__KeyToKey__ KeyCode::I, KeyCode::Z</autogen>
-					<autogen>__KeyToKey__ KeyCode::O, KeyCode::DOT</autogen>
-					<autogen>__KeyToKey__ KeyCode::P, KeyCode::KEY_0, ModifierFlag::SHIFT_L</autogen>
+					<autogen>__KeyToKey__ KeyCode::Q, KeyCode::Q </autogen>
+					<autogen>__KeyToKey__ KeyCode::E, KeyCode::D </autogen>
+					<autogen>__KeyToKey__ KeyCode::R, KeyCode::C </autogen>
+					<autogen>__KeyToKey__ KeyCode::U, KeyCode::J </autogen>
+					<autogen>__KeyToKey__ KeyCode::I, KeyCode::Z </autogen>
+					<autogen>__KeyToKey__ KeyCode::O, KeyCode::DOT </autogen>
+					<autogen>__KeyToKey__ KeyCode::P, KeyCode::KEY_0, ModifierFlag::SHIFT_L </autogen>
 				</block>
-
 				<block>
 					<modifier_only>ModifierFlag::E_MODE</modifier_only>
-					<autogen>__KeyToKey__ KeyCode::Q, KeyCode::X</autogen>
-					<autogen>__KeyToKey__ KeyCode::W, KeyCode::D</autogen>
-					<autogen>__KeyToKey__ KeyCode::E, KeyCode::E</autogen>
-					<autogen>__KeyToKey__ KeyCode::R, KeyCode::R</autogen>
-					<autogen>__KeyToKey__ KeyCode::T, KeyCode::KEY_4</autogen>
-					<autogen>__KeyToKey__ KeyCode::Y, KeyCode::KEY_4</autogen>
-					<autogen>__KeyToKey__ KeyCode::U, KeyCode::Y</autogen>
-					<autogen>__KeyToKey__ KeyCode::I, KeyCode::COMMA</autogen>
-					<autogen>__KeyToKey__ KeyCode::O, KeyCode::MINUS</autogen>
-					<autogen>__KeyToKey__ KeyCode::P, KeyCode::QUOTE</autogen>
+					<autogen>__KeyToKey__ KeyCode::Q, KeyCode::X </autogen>
+					<autogen>__KeyToKey__ KeyCode::W, KeyCode::D </autogen>
+					<autogen>__KeyOverlaidModifier__ KeyCode::R, KeyCode::VK_MODIFIER_ER_MODE, KeyCode::R </autogen>
+					<autogen>__KeyToKey__ KeyCode::U, KeyCode::Y </autogen>
+					<autogen>__KeyToKey__ KeyCode::I, KeyCode::COMMA </autogen>
+					<autogen>__KeyToKey__ KeyCode::O, KeyCode::MINUS </autogen>
+					<autogen>__KeyToKey__ KeyCode::P, KeyCode::QUOTE </autogen>
 				</block>
-
 				<block>
 					<modifier_only>ModifierFlag::R_MODE</modifier_only>
-					<autogen>__KeyToKey__ KeyCode::Q, KeyCode::F</autogen>
-					<autogen>__KeyToKey__ KeyCode::W, KeyCode::C</autogen>
-					<autogen>__KeyToKey__ KeyCode::E, KeyCode::R</autogen>
-					<autogen>__KeyToKey__ KeyCode::R, KeyCode::T</autogen>
-					<autogen>__KeyToKey__ KeyCode::T, KeyCode::KEY_5</autogen>
-					<autogen>__KeyToKey__ KeyCode::Y, KeyCode::KEY_5</autogen>
-					<autogen>__KeyToKey__ KeyCode::U, KeyCode::B</autogen>
-					<autogen>__KeyToKey__ KeyCode::I, KeyCode::V</autogen>
-					<autogen>__KeyToKey__ KeyCode::O, KeyCode::G</autogen>
-					<autogen>__KeyToKey__ KeyCode::P, KeyCode::SLASH</autogen>
+					<autogen>__KeyToKey__ KeyCode::Q, KeyCode::F </autogen>
+					<autogen>__KeyToKey__ KeyCode::W, KeyCode::C </autogen>
+					<autogen>__KeyToKey__ KeyCode::E, KeyCode::R </autogen>
+					<autogen>__KeyToKey__ KeyCode::U, KeyCode::B </autogen>
+					<autogen>__KeyToKey__ KeyCode::I, KeyCode::V </autogen>
+					<autogen>__KeyToKey__ KeyCode::O, KeyCode::G </autogen>
+					<autogen>__KeyToKey__ KeyCode::P, KeyCode::SLASH </autogen>
 				</block>
-
-				<block>
-					<modifier_only>ModifierFlag::T_MODE</modifier_only>
-					<autogen>__KeyToKey__ KeyCode::TAB, KeyCode::KEY_1</autogen>
-					<autogen>__KeyToKey__ KeyCode::Q,   KeyCode::KEY_2</autogen>
-					<autogen>__KeyToKey__ KeyCode::W,   KeyCode::KEY_3</autogen>
-					<autogen>__KeyToKey__ KeyCode::E,   KeyCode::KEY_4</autogen>
-					<autogen>__KeyToKey__ KeyCode::R,   KeyCode::KEY_5</autogen>
-					<autogen>__KeyToKey__ KeyCode::T,   KeyCode::T</autogen>
-					<autogen>__KeyToKey__ KeyCode::Y,   KeyCode::KEY_6</autogen>
-					<autogen>__KeyToKey__ KeyCode::U,   KeyCode::KEY_7</autogen>
-					<autogen>__KeyToKey__ KeyCode::I,   KeyCode::KEY_8</autogen>
-					<autogen>__KeyToKey__ KeyCode::O,   KeyCode::KEY_9</autogen>
-					<autogen>__KeyToKey__ KeyCode::P,   KeyCode::KEY_0</autogen>
-				</block>
-
-				<block>
-					<modifier_only>ModifierFlag::Y_MODE</modifier_only>
-					<autogen>__KeyToKey__ KeyCode::TAB, KeyCode::KEY_1</autogen>
-					<autogen>__KeyToKey__ KeyCode::Q,   KeyCode::KEY_2</autogen>
-					<autogen>__KeyToKey__ KeyCode::W,   KeyCode::KEY_3</autogen>
-					<autogen>__KeyToKey__ KeyCode::E,   KeyCode::KEY_4</autogen>
-					<autogen>__KeyToKey__ KeyCode::R,   KeyCode::KEY_5</autogen>
-					<autogen>__KeyToKey__ KeyCode::T,   KeyCode::KEY_6</autogen>
-					<autogen>__KeyToKey__ KeyCode::Y,   KeyCode::Y</autogen>
-					<autogen>__KeyToKey__ KeyCode::U,   KeyCode::KEY_7</autogen>
-					<autogen>__KeyToKey__ KeyCode::I,   KeyCode::KEY_8</autogen>
-					<autogen>__KeyToKey__ KeyCode::O,   KeyCode::KEY_9</autogen>
-					<autogen>__KeyToKey__ KeyCode::P,   KeyCode::KEY_0</autogen>
-				</block>
-
 				<block>
 					<modifier_only>ModifierFlag::U_MODE</modifier_only>
-					<autogen>__KeyToKey__ KeyCode::Q, KeyCode::Q</autogen>
-					<autogen>__KeyToKey__ KeyCode::W, KeyCode::J</autogen>
-					<autogen>__KeyToKey__ KeyCode::E, KeyCode::Y</autogen>
-					<autogen>__KeyToKey__ KeyCode::R, KeyCode::B</autogen>
-					<autogen>__KeyToKey__ KeyCode::T, KeyCode::KEY_7</autogen>
-					<autogen>__KeyToKey__ KeyCode::Y, KeyCode::KEY_7</autogen>
-					<autogen>__KeyToKey__ KeyCode::U, KeyCode::N</autogen>
-					<autogen>__KeyToKey__ KeyCode::I, KeyCode::H</autogen>
-					<autogen>__KeyToKey__ KeyCode::O, KeyCode::U</autogen>
-					<autogen>__KeyToKey__ KeyCode::P, KeyCode::M</autogen>
+					<autogen>__KeyToKey__ KeyCode::Q, KeyCode::Q </autogen>
+					<autogen>__KeyToKey__ KeyCode::W, KeyCode::J </autogen>
+					<autogen>__KeyToKey__ KeyCode::E, KeyCode::Y </autogen>
+					<autogen>__KeyToKey__ KeyCode::R, KeyCode::B </autogen>
+					<autogen>__KeyToKey__ KeyCode::I, KeyCode::H </autogen>
+					<autogen>__KeyToKey__ KeyCode::O, KeyCode::U </autogen>
+					<autogen>__KeyToKey__ KeyCode::P, KeyCode::M </autogen>
 				</block>
-
 				<block>
 					<modifier_only>ModifierFlag::I_MODE</modifier_only>
-					<autogen>__KeyToKey__ KeyCode::Q, KeyCode::KEY_1, ModifierFlag::SHIFT_L</autogen>
-					<autogen>__KeyToKey__ KeyCode::W, KeyCode::Z</autogen>
-					<autogen>__KeyToKey__ KeyCode::E, KeyCode::COMMA</autogen>
-					<autogen>__KeyToKey__ KeyCode::R, KeyCode::V</autogen>
-					<autogen>__KeyToKey__ KeyCode::T, KeyCode::KEY_8</autogen>
-					<autogen>__KeyToKey__ KeyCode::Y, KeyCode::KEY_8</autogen>
-					<autogen>__KeyToKey__ KeyCode::U, KeyCode::H</autogen>
-					<autogen>__KeyToKey__ KeyCode::I, KeyCode::I</autogen>
-					<autogen>__KeyToKey__ KeyCode::O, KeyCode::L</autogen>
-					<autogen>__KeyToKey__ KeyCode::P, KeyCode::K</autogen>
+					<autogen>__KeyToKey__ KeyCode::Q, KeyCode::KEY_1, ModifierFlag::SHIFT_L </autogen>
+					<autogen>__KeyToKey__ KeyCode::W, KeyCode::Z </autogen>
+					<autogen>__KeyToKey__ KeyCode::E, KeyCode::COMMA </autogen>
+					<autogen>__KeyToKey__ KeyCode::R, KeyCode::V </autogen>
+					<autogen>__KeyToKey__ KeyCode::U, KeyCode::H </autogen>
+					<autogen>__KeyToKey__ KeyCode::O, KeyCode::L </autogen>
+					<autogen>__KeyToKey__ KeyCode::P, KeyCode::K </autogen>
 				</block>
-
 				<block>
 					<modifier_only>ModifierFlag::O_MODE</modifier_only>
-					<autogen>__KeyToKey__ KeyCode::Q, KeyCode::KEY_9, ModifierFlag::SHIFT_L</autogen>
-					<autogen>__KeyToKey__ KeyCode::W, KeyCode::DOT</autogen>
-					<autogen>__KeyToKey__ KeyCode::E, KeyCode::MINUS</autogen>
-					<autogen>__KeyToKey__ KeyCode::R, KeyCode::G</autogen>
-					<autogen>__KeyToKey__ KeyCode::T, KeyCode::KEY_9</autogen>
-					<autogen>__KeyToKey__ KeyCode::Y, KeyCode::KEY_9</autogen>
-					<autogen>__KeyToKey__ KeyCode::U, KeyCode::U</autogen>
-					<autogen>__KeyToKey__ KeyCode::I, KeyCode::L</autogen>
-					<autogen>__KeyToKey__ KeyCode::O, KeyCode::O</autogen>
-					<autogen>__KeyToKey__ KeyCode::P, KeyCode::SEMICOLON</autogen>
+					<autogen>__KeyToKey__ KeyCode::Q, KeyCode::KEY_9, ModifierFlag::SHIFT_L </autogen>
+					<autogen>__KeyToKey__ KeyCode::W, KeyCode::DOT </autogen>
+					<autogen>__KeyToKey__ KeyCode::E, KeyCode::MINUS </autogen>
+					<autogen>__KeyToKey__ KeyCode::R, KeyCode::G </autogen>
+					<autogen>__KeyToKey__ KeyCode::U, KeyCode::U </autogen>
+					<autogen>__KeyToKey__ KeyCode::I, KeyCode::L </autogen>
+					<autogen>__KeyToKey__ KeyCode::P, KeyCode::SEMICOLON </autogen>
 				</block>
-
 				<block>
 					<modifier_only>ModifierFlag::P_MODE</modifier_only>
-					<autogen>__KeyToKey__ KeyCode::Q, KeyCode::SLASH, ModifierFlag::SHIFT_L</autogen>
-					<autogen>__KeyToKey__ KeyCode::W, KeyCode::KEY_0, ModifierFlag::SHIFT_L</autogen>
-					<autogen>__KeyToKey__ KeyCode::E, KeyCode::QUOTE</autogen>
-					<autogen>__KeyToKey__ KeyCode::R, KeyCode::SLASH</autogen>
-					<autogen>__KeyToKey__ KeyCode::T, KeyCode::KEY_0</autogen>
-					<autogen>__KeyToKey__ KeyCode::Y, KeyCode::KEY_0</autogen>
-					<autogen>__KeyToKey__ KeyCode::U, KeyCode::M</autogen>
-					<autogen>__KeyToKey__ KeyCode::I, KeyCode::K</autogen>
-					<autogen>__KeyToKey__ KeyCode::O, KeyCode::SEMICOLON</autogen>
-					<autogen>__KeyToKey__ KeyCode::P, KeyCode::P</autogen>
+					<autogen>__KeyToKey__ KeyCode::Q, KeyCode::KEY_9, ModifierFlag::SHIFT_L </autogen>
+					<autogen>__KeyToKey__ KeyCode::W, KeyCode::Z </autogen>
+					<autogen>__KeyToKey__ KeyCode::E, KeyCode::QUOTE </autogen>
+					<autogen>__KeyToKey__ KeyCode::R, KeyCode::BACKSLASH </autogen>
+					<autogen>__KeyToKey__ KeyCode::U, KeyCode::M </autogen>
+					<autogen>__KeyToKey__ KeyCode::I, KeyCode::K </autogen>
+					<autogen>__KeyToKey__ KeyCode::O, KeyCode::SEMICOLON </autogen>
 				</block>
-
-				<!-- these have to be below the other rules, so they have lower precedence -->
-				<autogen>__KeyOverlaidModifier__ KeyCode::Q, KeyCode::VK_MODIFIER_Q_MODE, KeyCode::A </autogen>
-				<autogen>__KeyOverlaidModifier__ KeyCode::W, KeyCode::VK_MODIFIER_W_MODE, KeyCode::S </autogen>
-				<autogen>__KeyOverlaidModifier__ KeyCode::E, KeyCode::VK_MODIFIER_E_MODE, KeyCode::E </autogen>
-				<autogen>__KeyOverlaidModifier__ KeyCode::R, KeyCode::VK_MODIFIER_R_MODE, KeyCode::T </autogen>
-				<autogen>__KeyOverlaidModifier__ KeyCode::T, KeyCode::VK_MODIFIER_T_MODE, KeyCode::BRACKET_LEFT </autogen>
-				<autogen>__KeyOverlaidModifier__ KeyCode::Y, KeyCode::VK_MODIFIER_Y_MODE, KeyCode::BRACKET_RIGHT </autogen>
-				<autogen>__KeyOverlaidModifier__ KeyCode::U, KeyCode::VK_MODIFIER_U_MODE, KeyCode::N </autogen>
-				<autogen>__KeyOverlaidModifier__ KeyCode::I, KeyCode::VK_MODIFIER_I_MODE, KeyCode::I </autogen>
-				<autogen>__KeyOverlaidModifier__ KeyCode::O, KeyCode::VK_MODIFIER_O_MODE, KeyCode::O </autogen>
-				<autogen>__KeyOverlaidModifier__ KeyCode::P, KeyCode::VK_MODIFIER_P_MODE, KeyCode::P </autogen>
+				<autogen>__KeyOverlaidModifier__ KeyCode::Q, KeyCode::VK_MODIFIER_Q_MODE, KeyCode::A</autogen>
+				<autogen>__KeyOverlaidModifier__ KeyCode::W, KeyCode::VK_MODIFIER_W_MODE, KeyCode::S</autogen>
+				<autogen>__KeyOverlaidModifier__ KeyCode::E, KeyCode::VK_MODIFIER_E_MODE, KeyCode::E</autogen>
+				<autogen>__KeyOverlaidModifier__ KeyCode::R, KeyCode::VK_MODIFIER_R_MODE, KeyCode::T</autogen>
+				<autogen>__KeyToKey__ KeyCode::T, KeyCode::BRACKET_LEFT</autogen>
+				<autogen>__KeyToKey__ KeyCode::Y, KeyCode::BRACKET_RIGHT</autogen>
+				<autogen>__KeyOverlaidModifier__ KeyCode::U, KeyCode::VK_MODIFIER_U_MODE, KeyCode::N</autogen>
+				<autogen>__KeyOverlaidModifier__ KeyCode::I, KeyCode::VK_MODIFIER_I_MODE, KeyCode::I</autogen>
+				<autogen>__KeyOverlaidModifier__ KeyCode::O, KeyCode::VK_MODIFIER_O_MODE, KeyCode::O</autogen>
+				<autogen>__KeyOverlaidModifier__ KeyCode::P, KeyCode::VK_MODIFIER_P_MODE, KeyCode::P</autogen>
 				<autogen>__KeyToKey__ KeyCode::BRACKET_LEFT, KeyCode::DELETE</autogen>
 				<autogen>__KeyToKey__ KeyCode::BRACKET_RIGHT, KeyCode::RETURN</autogen>
-				<autogen>__KeyToKey__ KeyCode::N, KeyCode::VK_STICKY_SHIFT_L</autogen>
+
 		</item>
 
 		<item>
@@ -298,3 +271,4 @@
 
 </item>
 </root>
+
