@@ -190,6 +190,7 @@
 				<autogen>__KeyOverlaidModifier__ KeyCode::P, KeyCode::VK_MODIFIER_P_MODE, KeyCode::P</autogen>
 				<autogen>__KeyToKey__ KeyCode::BRACKET_LEFT, KeyCode::DELETE</autogen>
 				<autogen>__KeyToKey__ KeyCode::BRACKET_RIGHT, KeyCode::RETURN</autogen>
+				<autogen>__KeyToKey__ KeyCode::N, KeyCode::VK_STICKY_SHIFT_L</autogen>
 
 		</item>
 

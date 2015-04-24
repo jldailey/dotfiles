@@ -26,26 +26,37 @@ keyCodes = {
 	x: "KeyCode::X"
 	y: "KeyCode::Y"
 	z: "KeyCode::Z"
-	0: "KeyCode::KEY_0"
+	"`": "KeyCode::BACKQUOTE"
+	"~": "KeyCode::BACKQUOTE, ModifierFlag::SHIFT_L"
 	1: "KeyCode::KEY_1"
-	2: "KeyCode::KEY_2"
-	3: "KeyCode::KEY_3"
-	4: "KeyCode::KEY_4"
-	5: "KeyCode::KEY_5"
-	6: "KeyCode::KEY_6"
-	7: "KeyCode::KEY_7"
-	8: "KeyCode::KEY_8"
-	9: "KeyCode::KEY_9"
-	")": "KeyCode::KEY_0, ModifierFlag::SHIFT_L"
 	"!": "KeyCode::KEY_1, ModifierFlag::SHIFT_L"
+	2: "KeyCode::KEY_2"
 	"@": "KeyCode::KEY_2, ModifierFlag::SHIFT_L"
+	3: "KeyCode::KEY_3"
 	"#": "KeyCode::KEY_3, ModifierFlag::SHIFT_L"
+	4: "KeyCode::KEY_4"
 	"$": "KeyCode::KEY_4, ModifierFlag::SHIFT_L"
+	5: "KeyCode::KEY_5"
 	"%": "KeyCode::KEY_5, ModifierFlag::SHIFT_L"
+	6: "KeyCode::KEY_6"
 	"^": "KeyCode::KEY_6, ModifierFlag::SHIFT_L"
+	7: "KeyCode::KEY_7"
 	"&": "KeyCode::KEY_7, ModifierFlag::SHIFT_L"
+	8: "KeyCode::KEY_8"
 	"*": "KeyCode::KEY_8, ModifierFlag::SHIFT_L"
+	9: "KeyCode::KEY_9"
 	"(": "KeyCode::KEY_9, ModifierFlag::SHIFT_L"
+	0: "KeyCode::KEY_0"
+	")": "KeyCode::KEY_0, ModifierFlag::SHIFT_L"
+	"-": "KeyCode::MINUS"
+	"_": "KeyCode::MINUS, ModifierFlag::SHIFT_L"
+	"=": "KeyCode::EQUAL"
+	"+": "KeyCode::EQUAL, ModifierFlag::SHIFT_L"
+	"": "KeyCode::DELETE"
+	"\t": "KeyCode::TAB"
+	"\x0F": "KeyCode::VK_STICKY_SHIFT_L"
+	"\x11": "KeyCode::VK_STICKY_CONTROL_L"
+	"\x12": "KeyCode::VK_STICKY_COMMAND_L"
 	"[": "KeyCode::BRACKET_LEFT"
 	"]": "KeyCode::BRACKET_RIGHT"
 	"{": "KeyCode::BRACKET_LEFT, ModifierFlag::SHIFT_L"
@@ -62,11 +73,6 @@ keyCodes = {
 	"<": "KeyCode::COMMA, ModifierFlag::SHIFT_L"
 	"/": "KeyCode::BACKSLASH"
 	"?": "KeyCode::BACKSLASH, ModifierFlag::SHIFT_L"
-	"-": "KeyCode::MINUS"
-	"_": "KeyCode::MINUS, ModifierFlag::SHIFT_L"
-	"=": "KeyCode::EQUAL"
-	"+": "KeyCode::EQUAL, ModifierFlag::SHIFT_L"
-	"": "KeyCode::DELETE"
 	"\n": "KeyCode::RETURN"
 }
 
@@ -83,6 +89,7 @@ mappings = {
 	"p": "p"
 	"[": ""
 	"]": "\n"
+	"n": "\x0F"
 
 	"qw": "w"
 	"qe": "x"
@@ -115,6 +122,7 @@ mappings = {
 	"ri": "v"
 	"ro": "g"
 	"rp": "\\"
+	"r ": "t "
 
 	"uq": "q"
 	"uw": "j"
@@ -123,6 +131,7 @@ mappings = {
 	"ui": "h"
 	"uo": "u"
 	"up": "m"
+	"u ": "n "
 
 	"iq": "!"
 	"iw": "z"
@@ -131,6 +140,7 @@ mappings = {
 	"iu": "h"
 	"io": "l"
 	"ip": "k"
+	"i ": "i "
 
 	"oq": "("
 	"ow": "."
@@ -139,6 +149,7 @@ mappings = {
 	"ou": "u"
 	"oi": "l"
 	"op": ";"
+	"o ": "o "
 
 	"pq": "("
 	"pw": "z"
@@ -147,6 +158,7 @@ mappings = {
 	"pu": "m"
 	"pi": "k"
 	"po": ";"
+	"p ": "p "
 
 	"qwe": "we"
 	"qpo": "->"
@@ -169,16 +181,17 @@ modes = $.keysOf(mappings).sortBy('length').reverse().filterMap((s) ->
 		s.substr(0,s.length-1)
 	else null
 ).distinct()
+# TODO: fill out missing intermediate modes as needed
 
 output = ""
 
-tab = (n) -> $.repeat "\t", n
+tab = (n) -> "\n" + $.repeat "\t", n
 
 for mode in modes
-	output += "\n#{tab 4}<modifierdef>#{mode.toUpperCase()}_MODE</modifierdef>"
+	output += "#{tab 4}<modifierdef>#{mode.toUpperCase()}_MODE</modifierdef>"
 
 for mode in modes
-	output += """\n#{tab 4}<block>\n#{tab 5}<modifier_only>ModifierFlag::#{mode.toUpperCase()}_MODE</modifier_only>
+	output += """#{tab 4}<block>#{tab 5}<modifier_only>ModifierFlag::#{mode.toUpperCase()}_MODE</modifier_only>
 	"""
 	re = RegExp "^" + mode
 	for combo in $.keysOf(mappings).filter(re).replace(re,'').filter('',false) when combo of keyCodes
@@ -186,18 +199,18 @@ for mode in modes
 		mapping = mappings[key].split('').map((s) -> keyCodes[s]).join ', '
 
 		if key in modes
-			output += "\n#{tab 5}<autogen>__KeyOverlaidModifier__ #{keyCodes[combo]}, KeyCode::VK_MODIFIER_#{key.toUpperCase()}_MODE, #{mapping} </autogen>"
+			output += "#{tab 5}<autogen>__KeyOverlaidModifier__ #{keyCodes[combo]}, KeyCode::VK_MODIFIER_#{key.toUpperCase()}_MODE, #{mapping} </autogen>"
 		else
-			output += "\n#{tab 5}<autogen>__KeyToKey__ #{keyCodes[combo]}, #{mapping} </autogen>"
+			output += "#{tab 5}<autogen>__KeyToKey__ #{keyCodes[combo]}, #{mapping} </autogen>"
 
-	output += "\n#{tab 4}</block>"
+	output += "#{tab 4}</block>"
 
 for single in $.keysOf(mappings).filter(/^.$/)
 	upper = single.toUpperCase()
 	if single in modes
-		output += "\n#{tab 4}<autogen>__KeyOverlaidModifier__ #{keyCodes[single]}, KeyCode::VK_MODIFIER_#{upper}_MODE, #{keyCodes[mappings[single]]}</autogen>"
+		output += "#{tab 4}<autogen>__KeyOverlaidModifier__ #{keyCodes[single]}, KeyCode::VK_MODIFIER_#{upper}_MODE, #{keyCodes[mappings[single]]}</autogen>"
 	else
-		output += "\n#{tab 4}<autogen>__KeyToKey__ #{keyCodes[single]}, #{keyCodes[mappings[single]]}</autogen>"
+		output += "#{tab 4}<autogen>__KeyToKey__ #{keyCodes[single]}, #{keyCodes[mappings[single]]}</autogen>"
 
 fs = require 'fs'
 console.log String fs.readFileSync "header"
