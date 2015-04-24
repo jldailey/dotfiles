@@ -69,37 +69,46 @@
 				<modifierdef>O_MODE</modifierdef>
 				<modifierdef>P_MODE</modifierdef>
 				<block>
+
 					<modifier_only>ModifierFlag::ERU_MODE</modifier_only>
 					<autogen>__KeyToKey__ KeyCode::I, KeyCode::T, KeyCode::H, KeyCode::E </autogen>
 				</block>
 				<block>
+
 					<modifier_only>ModifierFlag::ERI_MODE</modifier_only>
 					<autogen>__KeyToKey__ KeyCode::U, KeyCode::T, KeyCode::H, KeyCode::E </autogen>
 				</block>
 				<block>
+
 					<modifier_only>ModifierFlag::QW_MODE</modifier_only>
 					<autogen>__KeyToKey__ KeyCode::E, KeyCode::W, KeyCode::E </autogen>
 				</block>
 				<block>
+
 					<modifier_only>ModifierFlag::QP_MODE</modifier_only>
 					<autogen>__KeyToKey__ KeyCode::O, KeyCode::MINUS, KeyCode::DOT, ModifierFlag::SHIFT_L </autogen>
 					<autogen>__KeyToKey__ KeyCode::I, KeyCode::EQUAL, KeyCode::DOT, ModifierFlag::SHIFT_L </autogen>
 				</block>
 				<block>
+
 					<modifier_only>ModifierFlag::QO_MODE</modifier_only>
 					<autogen>__KeyToKey__ KeyCode::P, KeyCode::MINUS, KeyCode::DOT, ModifierFlag::SHIFT_L </autogen>
 				</block>
 				<block>
+
 					<modifier_only>ModifierFlag::QI_MODE</modifier_only>
 					<autogen>__KeyToKey__ KeyCode::P, KeyCode::EQUAL, KeyCode::DOT, ModifierFlag::SHIFT_L </autogen>
 				</block>
 				<block>
+
 					<modifier_only>ModifierFlag::ER_MODE</modifier_only>
 					<autogen>__KeyOverlaidModifier__ KeyCode::U, KeyCode::VK_MODIFIER_ERU_MODE, KeyCode::Y </autogen>
 					<autogen>__KeyOverlaidModifier__ KeyCode::I, KeyCode::VK_MODIFIER_ERI_MODE, KeyCode::R, KeyCode::I </autogen>
 				</block>
 				<block>
+
 					<modifier_only>ModifierFlag::Q_MODE</modifier_only>
+					<autogen>__KeyToKey__ KeyCode::SPACE, KeyCode::A, KeyCode::SPACE </autogen>
 					<autogen>__KeyOverlaidModifier__ KeyCode::W, KeyCode::VK_MODIFIER_QW_MODE, KeyCode::W </autogen>
 					<autogen>__KeyToKey__ KeyCode::E, KeyCode::X </autogen>
 					<autogen>__KeyToKey__ KeyCode::R, KeyCode::F </autogen>
@@ -109,7 +118,9 @@
 					<autogen>__KeyOverlaidModifier__ KeyCode::P, KeyCode::VK_MODIFIER_QP_MODE, KeyCode::KEY_0, ModifierFlag::SHIFT_L </autogen>
 				</block>
 				<block>
+
 					<modifier_only>ModifierFlag::W_MODE</modifier_only>
+					<autogen>__KeyToKey__ KeyCode::SPACE, KeyCode::S, KeyCode::SPACE </autogen>
 					<autogen>__KeyToKey__ KeyCode::Q, KeyCode::Q </autogen>
 					<autogen>__KeyToKey__ KeyCode::E, KeyCode::D </autogen>
 					<autogen>__KeyToKey__ KeyCode::R, KeyCode::C </autogen>
@@ -119,7 +130,9 @@
 					<autogen>__KeyToKey__ KeyCode::P, KeyCode::KEY_0, ModifierFlag::SHIFT_L </autogen>
 				</block>
 				<block>
+
 					<modifier_only>ModifierFlag::E_MODE</modifier_only>
+					<autogen>__KeyToKey__ KeyCode::SPACE, KeyCode::E, KeyCode::SPACE </autogen>
 					<autogen>__KeyToKey__ KeyCode::Q, KeyCode::X </autogen>
 					<autogen>__KeyToKey__ KeyCode::W, KeyCode::D </autogen>
 					<autogen>__KeyOverlaidModifier__ KeyCode::R, KeyCode::VK_MODIFIER_ER_MODE, KeyCode::R </autogen>
@@ -129,7 +142,9 @@
 					<autogen>__KeyToKey__ KeyCode::P, KeyCode::QUOTE </autogen>
 				</block>
 				<block>
+
 					<modifier_only>ModifierFlag::R_MODE</modifier_only>
+					<autogen>__KeyToKey__ KeyCode::SPACE, KeyCode::T, KeyCode::SPACE </autogen>
 					<autogen>__KeyToKey__ KeyCode::Q, KeyCode::F </autogen>
 					<autogen>__KeyToKey__ KeyCode::W, KeyCode::C </autogen>
 					<autogen>__KeyToKey__ KeyCode::E, KeyCode::R </autogen>
@@ -139,7 +154,9 @@
 					<autogen>__KeyToKey__ KeyCode::P, KeyCode::SLASH </autogen>
 				</block>
 				<block>
+
 					<modifier_only>ModifierFlag::U_MODE</modifier_only>
+					<autogen>__KeyToKey__ KeyCode::SPACE, KeyCode::N, KeyCode::SPACE </autogen>
 					<autogen>__KeyToKey__ KeyCode::Q, KeyCode::Q </autogen>
 					<autogen>__KeyToKey__ KeyCode::W, KeyCode::J </autogen>
 					<autogen>__KeyToKey__ KeyCode::E, KeyCode::Y </autogen>
@@ -149,7 +166,9 @@
 					<autogen>__KeyToKey__ KeyCode::P, KeyCode::M </autogen>
 				</block>
 				<block>
+
 					<modifier_only>ModifierFlag::I_MODE</modifier_only>
+					<autogen>__KeyToKey__ KeyCode::SPACE, KeyCode::I, KeyCode::SPACE </autogen>
 					<autogen>__KeyToKey__ KeyCode::Q, KeyCode::KEY_1, ModifierFlag::SHIFT_L </autogen>
 					<autogen>__KeyToKey__ KeyCode::W, KeyCode::Z </autogen>
 					<autogen>__KeyToKey__ KeyCode::E, KeyCode::COMMA </autogen>
@@ -159,7 +178,9 @@
 					<autogen>__KeyToKey__ KeyCode::P, KeyCode::K </autogen>
 				</block>
 				<block>
+
 					<modifier_only>ModifierFlag::O_MODE</modifier_only>
+					<autogen>__KeyToKey__ KeyCode::SPACE, KeyCode::O, KeyCode::SPACE </autogen>
 					<autogen>__KeyToKey__ KeyCode::Q, KeyCode::KEY_9, ModifierFlag::SHIFT_L </autogen>
 					<autogen>__KeyToKey__ KeyCode::W, KeyCode::DOT </autogen>
 					<autogen>__KeyToKey__ KeyCode::E, KeyCode::MINUS </autogen>
@@ -169,7 +190,9 @@
 					<autogen>__KeyToKey__ KeyCode::P, KeyCode::SEMICOLON </autogen>
 				</block>
 				<block>
+
 					<modifier_only>ModifierFlag::P_MODE</modifier_only>
+					<autogen>__KeyToKey__ KeyCode::SPACE, KeyCode::P, KeyCode::SPACE </autogen>
 					<autogen>__KeyToKey__ KeyCode::Q, KeyCode::KEY_9, ModifierFlag::SHIFT_L </autogen>
 					<autogen>__KeyToKey__ KeyCode::W, KeyCode::Z </autogen>
 					<autogen>__KeyToKey__ KeyCode::E, KeyCode::QUOTE </autogen>

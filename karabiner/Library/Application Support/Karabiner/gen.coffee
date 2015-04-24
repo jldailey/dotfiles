@@ -26,6 +26,7 @@ keyCodes = {
 	x: "KeyCode::X"
 	y: "KeyCode::Y"
 	z: "KeyCode::Z"
+	" ": "KeyCode::SPACE"
 	"`": "KeyCode::BACKQUOTE"
 	"~": "KeyCode::BACKQUOTE, ModifierFlag::SHIFT_L"
 	1: "KeyCode::KEY_1"
@@ -91,6 +92,15 @@ mappings = {
 	"]": "\n"
 	"n": "\x0F"
 
+	"q ": "a "
+	"w ": "s "
+	"e ": "e "
+	"r ": "t "
+	"u ": "n "
+	"i ": "i "
+	"o ": "o "
+	"p ": "p "
+
 	"qw": "w"
 	"qe": "x"
 	"qr": "f"
@@ -122,7 +132,6 @@ mappings = {
 	"ri": "v"
 	"ro": "g"
 	"rp": "\\"
-	"r ": "t "
 
 	"uq": "q"
 	"uw": "j"
@@ -131,7 +140,6 @@ mappings = {
 	"ui": "h"
 	"uo": "u"
 	"up": "m"
-	"u ": "n "
 
 	"iq": "!"
 	"iw": "z"
@@ -140,7 +148,6 @@ mappings = {
 	"iu": "h"
 	"io": "l"
 	"ip": "k"
-	"i ": "i "
 
 	"oq": "("
 	"ow": "."
@@ -149,7 +156,6 @@ mappings = {
 	"ou": "u"
 	"oi": "l"
 	"op": ";"
-	"o ": "o "
 
 	"pq": "("
 	"pw": "z"
@@ -158,7 +164,6 @@ mappings = {
 	"pu": "m"
 	"pi": "k"
 	"po": ";"
-	"p ": "p "
 
 	"qwe": "we"
 	"qpo": "->"
@@ -191,7 +196,8 @@ for mode in modes
 	output += "#{tab 4}<modifierdef>#{mode.toUpperCase()}_MODE</modifierdef>"
 
 for mode in modes
-	output += """#{tab 4}<block>#{tab 5}<modifier_only>ModifierFlag::#{mode.toUpperCase()}_MODE</modifier_only>
+	output += """#{tab 4}<block>
+		#{tab 5}<modifier_only>ModifierFlag::#{mode.toUpperCase()}_MODE</modifier_only>
 	"""
 	re = RegExp "^" + mode
 	for combo in $.keysOf(mappings).filter(re).replace(re,'').filter('',false) when combo of keyCodes
