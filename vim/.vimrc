@@ -77,7 +77,6 @@ hi Operator    ctermbg=NONE guibg=NONE
 " force the paren-matching colors to be simple so they dont get confused with the cursor
 hi MatchParen cterm=underline gui=underline ctermbg=NONE ctermfg=white guibg=NONE guifg=white
 
-
 " not so abrupt with the TODO comments
 hi Todo ctermfg=yellow ctermbg=NONE cterm=underline
 
@@ -118,7 +117,7 @@ set nocindent " these do.
 " General mappings
 "
 " Toggle line numbers
-:map ,l :set number!<Enter>
+map ,l :set number!<Enter>
 
 " Knock out these (out-dated) default mappings
 nnoremap <F1> <nop>
@@ -127,18 +126,22 @@ nnoremap Q <nop>
 nnoremap K ddpkJ
 
 " Mappings that work on whole indented blocks
-:map ,d zcdd " fold + delete
-:map ,> zc>> " fold + indent
-:map ,< zc<< " fold + unindent
-:map ,y zcY " fold + yank
+" fold + delete
+map ,d zcdd
+" fold + indent
+map ,> zc>>
+" fold + unindent
+map ,< zc<<
+" fold + yank
+map ,y zcY
 
 " bind some build hotkeys
-:map  <F5>    :wa<CR>:!make test<CR>
-:map  [15~  :wa<CR>:!make test<CR>
-:map  <F6>    :wa<CR>:!make<CR>
-:map  [17~  :wa<CR>:!make<CR>
-:map  <F7>    :wa<CR>:!make run<CR>
-:map  [18~  :wa<CR>:!make run<CR>
+map  <F5>    :wa<CR>:!make test<CR>
+map  [15~  :wa<CR>:!make test<CR>
+map  <F6>    :wa<CR>:!make<CR>
+map  [17~  :wa<CR>:!make<CR>
+map  <F7>    :wa<CR>:!make run<CR>
+map  [18~  :wa<CR>:!make run<CR>
 imap  <F5>   <Esc>:wa<CR>:!make test<CR>
 imap  [15~ <Esc>:wa<CR>:!make test<CR>
 imap  <F6>   <Esc>:wa<CR>:!make<CR>
@@ -150,22 +153,22 @@ imap  [18~ <Esc>:wa<CR>:!make run<CR>
 inoremap # x<Backspace>#
 
 " Move quickly between splits (in all different terminals, ugh)
-:map <C-Up>    <C-w><Up><C-w>_
-:map 0a      <C-w><Up><C-w>_
-:map Oa      <C-w><Up><C-w>_
-:map [1;5A   <C-w><Up><C-w>_
-:map <C-Down>  <C-w><Down><C-w>_
-:map 0b      <C-w><Down><C-w>_
-:map Ob      <C-w><Down><C-w>_
-:map [1;5B   <C-w><Down><C-w>_
-:map <C-Left>  <C-w><Left>
-:map 0d      <C-w><Left>
-:map Od      <C-w><Left>
-:map [1;5D   <C-w><Left>
-:map <C-Right> <C-w><Right>
-:map 0c      <C-w><Right>
-:map Oc      <C-w><Right>
-:map [1;5C   <C-w><Right>
+map <C-Up>    <C-w><Up><C-w>_
+map 0a      <C-w><Up><C-w>_
+map Oa      <C-w><Up><C-w>_
+map [1;5A   <C-w><Up><C-w>_
+map <C-Down>  <C-w><Down><C-w>_
+map 0b      <C-w><Down><C-w>_
+map Ob      <C-w><Down><C-w>_
+map [1;5B   <C-w><Down><C-w>_
+map <C-Left>  <C-w><Left>
+map 0d      <C-w><Left>
+map Od      <C-w><Left>
+map [1;5D   <C-w><Left>
+map <C-Right> <C-w><Right>
+map 0c      <C-w><Right>
+map Oc      <C-w><Right>
+map [1;5C   <C-w><Right>
 imap <C-Up>    <Esc><C-w><Up><C-w>_
 imap 0a      <Esc><C-w><Up><C-w>_
 imap Oa      <Esc><C-w><Up><C-w>_
@@ -184,20 +187,20 @@ imap Oc      <C-w><Right>
 imap [1;5C   <Esc><C-w><Right>
 
 " Ctrl-D closes file - controversial
-:map <C-d> :q<cr>
+map <C-d> :q<cr>
 imap <C-d> <Esc>:q<cr>
 
 " Ctrl-S saves (not all terminals can send it but just in case)
-:map <C-s> :w<cr>
+map <C-s> :w<cr>
 imap <C-s> <Esc>:w<cr>
 
 " Tab mappings
-:map  <C-t>     :tabnew<cr>
-:map          :tabnew<cr>
-:map  <C-Tab>   :tabnext<cr>
-:map  [1;5I   :tabnext<cr>
-:map  <C-S-tab> :tabprev<cr>
-:map  [1;6I   :tabprev<cr>
+map  <C-t>     :tabnew<cr>
+map          :tabnew<cr>
+map  <C-Tab>   :tabnext<cr>
+map  [1;5I   :tabnext<cr>
+map  <C-S-tab> :tabprev<cr>
+map  [1;6I   :tabprev<cr>
 imap <C-t>     <Esc>:tabnew<cr>
 imap         <Esc>:tabnew<cr>
 imap <C-Tab>   <Esc>:tabnext<cr>
@@ -220,7 +223,10 @@ au BufRead,BufNewFile *.go set filetype=go
 " JSON mappins
 au BufRead,BufNewFile *.json set filetype=javascript
 
-au FileType javascript let g:syntastic_javascript_closurecompiler_path="/Users/jldailey/compiler.jar"
+
+if has("win32")
+	au FileType javascript let g:syntastic_javascript_closurecompiler_path="/Users/jldailey/compiler.jar"
+endif
 
 " CoffeeScript mappings
 
@@ -259,4 +265,8 @@ set encoding=utf-8
 " Show whitespace characters as special symbols
 set listchars=tab:›\ ,precedes:‹,extends:›,trail:…
 set nolist
-:map ,L :set list!<CR>
+map ,L :set list!<CR>
+
+" configure spell checker
+map ,s :set spell! spelllang=en_us<cr>
+hi SpellBad ctermfg=red cterm=underline guifg=red gui=undercurl
