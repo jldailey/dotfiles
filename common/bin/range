@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+I=$1
+J=$2
+SPACE=
+
+while [ "$I" -lt "$J" ]; do
+	echo -n "${SPACE}${I}"
+	I=$(expr $I + 1)
+	SPACE=" "
+done
