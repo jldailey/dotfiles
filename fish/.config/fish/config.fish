@@ -11,6 +11,10 @@ alias vi="env SHELL=/bin/bash vim"
 alias vim="env SHELL=/bin/bash vim"
 alias sc="env SHELL=(which fish) screen -DR"
 
+function line
+	head -$argv | tail -1
+end
+
 function _prompt_user
 	set_color yellow
 	printf '%s' $USER
@@ -74,4 +78,7 @@ end
 
 if test -e (which fish)
 	set -g SHELL (which fish)
+end
+
+function fish_title
 end
