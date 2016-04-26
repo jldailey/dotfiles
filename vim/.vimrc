@@ -8,16 +8,29 @@ syn on
 
 color darkblue
 color wombat256
-color xoria256
-color mustang
+" color mustang
+" color maroloccio
+
+" Setting and overrides for wombat256
+if g:colors_name is "wombat256"
+	hi SpecialKey ctermfg=236 ctermbg=NONE
+else
+	" don't disturb these in wombat mode, since it breaks their links
+	hi SpecialChar ctermbg=NONE
+	hi Operator    ctermbg=NONE
+	hi Repeat      ctermbg=NONE guibg=NONE
+endif
+
+
 " yellow/white on blue status line
 hi StatusLine ctermbg=darkblue ctermfg=yellow
 hi StatusLineNC ctermbg=darkblue ctermfg=white
 
-" Override with a purplish scheme
-" color maroloccio
-" hi StatusLine cterm=underline ctermbg=236 ctermfg=11
-" hi StatusLineNC cterm=underline
+" Setting and override for maroloccio (purple and dark)
+if g:colors_name is "maroloccio"
+	hi StatusLine cterm=underline ctermbg=236 ctermfg=11
+	hi StatusLineNC cterm=underline
+endif
 
 behave xterm
 if has("gui_running")
@@ -46,7 +59,6 @@ hi Comment ctermfg=darkgrey
 hi NonText     ctermbg=NONE guibg=NONE
 hi LineNr      ctermbg=NONE guibg=NONE
 hi SpecialKey  ctermbg=NONE guibg=NONE
-hi SpecialChar ctermbg=NONE guibg=NONE
 hi Identifier  ctermbg=NONE guibg=NONE
 hi SpellBad    ctermbg=NONE guibg=NONE
 hi SpellCap    ctermbg=NONE guibg=NONE
@@ -71,10 +83,8 @@ hi Boolean     ctermbg=NONE guibg=NONE
 hi Float       ctermbg=NONE guibg=NONE
 hi Function    ctermbg=NONE guibg=NONE
 hi Conditional ctermbg=NONE guibg=NONE
-hi Repeat      ctermbg=NONE guibg=NONE
 hi Label       ctermbg=NONE guibg=NONE
-hi Operator    ctermbg=NONE guibg=NONE
-" force the paren-matching colors to be simple so they dont get confused with the cursor
+" force the paren-matching colors to be simple so they don't get confused with the cursor
 hi MatchParen cterm=underline gui=underline ctermbg=NONE ctermfg=white guibg=NONE guifg=white
 
 " not so abrupt with the TODO comments
@@ -85,16 +95,16 @@ set exrc
 set nocompatible
 set laststatus=2
 set backspace=2 " allow backspace over anything in insert mode
-set nobackup " dont create ~ backup files
-set noswapfile " dont create .swp files
+set nobackup " don't create ~ backup files
+set noswapfile " don't create .swp files
 set viminfo='20,\"50 " what to save in ~/.viminfo
 set history=50 " how much to save
 set ruler
-set nowrap " dont wrap long lines
+set nowrap " don't wrap long lines
 set number " show line numbers on the left                                                                                         
 set timeoutlen=300 " ms gap between mapping keys
 set visualbell " errors flash instead of beep
-set autoread " dont warn about files that changed on disk, just read them
+set autoread " don't warn about files that changed on disk, just read them
 set modeline " turn on modelines feature (looks for comments containing file-specific settings)
 set modelines=10 " reads this many lines of the file
 filetype plugin on " load ftplugins
@@ -123,6 +133,8 @@ map ,l :set number!<Enter>
 nnoremap <F1> <nop>
 nnoremap Q <nop>
 " <Shift-K> causes a `man` lookup, almost never useful today
+" map it to have a meaning more like the opposite of <Shift-J>:
+" prepend the following line to the current line
 nnoremap K ddpkJ
 
 " Mappings that work on whole indented blocks
@@ -149,7 +161,7 @@ imap  [17~ <Esc>:wa<CR>:!make<CR>
 imap  <F7>   <Esc>:wa<CR>:!make run<CR>
 imap  [18~ <Esc>:wa<CR>:!make run<CR>
 
-" dont treat '#' as special
+" Don't treat '#' as special
 inoremap # x<Backspace>#
 
 " Move quickly between splits (in all different terminals, ugh)
@@ -209,9 +221,9 @@ imap <C-S-tab> <Esc>:tabprev<cr>
 imap [1;6I   <Esc>:tabprev<cr>
 
 " HTML mappings
-au FileType html imap <script <script type="text/javascript"
-au FileType html imap <style <style type="text/css"
-au FileType html imap <link <link rel="stylesheet" href="
+au FileType html imap <scr <script type="text/javascript"
+au FileType html imap <sty <style type="text/css"
+au FileType html imap <lin <link rel="stylesheet" href="
 au FileType html inoremap <!-- <!-- --><Esc>hhhi
 
 " Python mappings
@@ -220,7 +232,7 @@ au! FileType python runtime! autoload/pythoncomplete.vim
 " Go mappings
 au BufRead,BufNewFile *.go set filetype=go
 
-" JSON mappins
+" JSON mappings
 au BufRead,BufNewFile *.json set filetype=javascript
 
 
@@ -233,7 +245,13 @@ endif
 " If you have something visually selected: ',p' will show you the
 " compiled version.
 au FileType coffee vmap ,p y:!coffee -bce '<C-R>"'<CR>
+" ,e will execute the highlighted code and append it's output
 au FileType coffee vmap ,e y:read !coffee -e 'console.log <C-R>"'<CR>
+
+au FileType coffee syn match blingOperator /\$/ display
+au FileType coffee hi link blingOperator Constant
+au FileType javascript syn match blingOperator /\$/ display
+au FileType javascript hi link blingOperator Constant
 
 if executable('coffeetags')
   let g:tagbar_type_coffee = {
@@ -258,7 +276,7 @@ hi lineAdded ctermfg=green ctermbg=NONE guifg=green
 hi lineRemoved ctermfg=red ctermbg=NONE guifg=red
 hi lineModified ctermfg=yellow ctermbg=NONE guifg=yellow
 
-" Force files into utf-8 mode
+" Force files into utf8 mode
 scriptencoding utf-8
 set encoding=utf-8
 
