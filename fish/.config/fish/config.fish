@@ -7,9 +7,10 @@ alias vsh="vagrant ssh"
 alias vpr="vagrant provision"
 alias vst="vagrant status"
 alias lsa="ls -hal"
-alias vi="env SHELL=/bin/bash vim"
-alias vim="env SHELL=/bin/bash vim"
-alias sc="env SHELL=(which fish) screen -DR"
+
+function vi --wraps vim
+	env SHELL=/bin/bash vim $argv
+end
 
 function line
 	head -$argv | tail -1
@@ -81,4 +82,10 @@ if test -e (which fish)
 end
 
 function fish_title
+end
+
+set TERM xterm-256color
+
+function sc --wraps screen
+	env TERM=xterm-256color SHELL=(which fish) screen -DR
 end
