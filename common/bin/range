@@ -2,10 +2,29 @@
 
 I=$1
 J=$2
+if [ -z "$3" ]; then
+	K=1
+else
+	K=$3
+fi
 SPACE=
 
-while [ "$I" -lt "$J" ]; do
-	echo -n "${SPACE}${I}"
-	I=$(expr $I + 1)
-	SPACE=" "
-done
+if [ "$I" -lt "$J" ]; then
+	if [ "$K" -lt "1" ]; then
+		K=$(expr $K \* -1)
+	fi
+	while [ "$I" -lt "$J" ]; do
+		echo -n "${SPACE}${I}"
+		I=$(expr $I + $K)
+		SPACE=" "
+	done
+elif [ "$I" -gt "$J" ]; then
+	if [ "$K" -gt "-1" ]; then
+		K=$(expr $K \* -1)
+	fi
+	while [ "$I" -gt "$J" ]; do
+		echo -n "${SPACE}${I}"
+		I=$(expr $I + $K)
+		SPACE=" "
+	done
+fi
