@@ -16,6 +16,10 @@ function line
 	head -$argv | tail -1
 end
 
+function goo
+	googler -j $argv
+end
+
 function _prompt_user
 	set_color yellow
 	printf '%s' $USER
